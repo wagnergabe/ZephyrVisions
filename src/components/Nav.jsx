@@ -5,11 +5,11 @@ import {useState} from 'react';
 const ROUTES = ["Home", "About", "Services", "Contact"];
 
 function Nav() {
-const [mobileMenu, setMobileMenu] = useState(false)
+const [mobileMenu, setMobileMenu] = useState(true)
     return (
-        <nav className="flex flex-wrap justify-between items-center">
+        <nav className="flex flex-wrap justify-between items-center bg-black p-3 border-[#11BBEF]">
             <a href="#">
-           <img className="w-383 h-24" src={logo} />
+           <img className="w-38 h-24" src={logo} />
            </a>
 
            <button className=" p-2 text-white bg-[#11BBEF] hover:bg-black focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden" onClick={() => {setMobileMenu(!mobileMenu)}}>
