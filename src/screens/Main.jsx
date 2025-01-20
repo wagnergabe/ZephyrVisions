@@ -3,15 +3,15 @@ import { FcInspection } from "react-icons/fc";
 import { AiOutlineHome } from "react-icons/ai"; 
 import { BiPhotoAlbum } from "react-icons/bi"; 
 import hero from '../assets/hero.png';
-import matrice from '../assets/matrice.jpg';
+import avata from '../assets/avata.webp';
 
 const Main = () => {
     return (
         <main class="flex flex-col items-center w-screen h-full justify-center">
             <img class="border-8 border-y-[#07C0EA] w-full shadow-2xl h-auto" src={hero} />
             
-            <section>
-            <ul class="flex flex-col lg:flex-row justify-between my-[200px] items-center">
+            <section class="lg:w-[75%]">
+            <ul class="flex flex-col lg:flex-row justify-between my-[200px] mx-3 items-center">
                     <li class="flex flex-col justify-center items-center mx-3 my-3 flex-1"><BiPhotoAlbum size={80} color="#07C0EA"/>
                         <h3 class="font-bold">Aerial Photography and videography</h3>
                             <p class="text-center">We offer professional aerial video and/or aerial photography for any occasion. With the combination of the latest in technology and experience, we ensure every shot is the very best quality at an affordable price.</p>
@@ -26,9 +26,9 @@ const Main = () => {
                     </li>
                 </ul>
             </section>
-            <div class="w-full h-[400px] flex flex-col lg:flex-row justify-between mb-20">
+            <div class="w-full h-[40vh] flex flex-col lg:flex-row justify-between mb-20 bg-black">
                 <div class="m-auto">
-                <img src={matrice} class="w-full h-[50vh]" />
+                <img src={avata} class=" m-0 p-0 w-[300px] h-[30vh] motion-translate-y motion-translat" />
                 </div>
                 <div class="m-auto h-auto">
                 <button class="bg-[#58595B] w-[200px] h-[100px] rounded-xl text-white text-2xl font-bold">Drones</button>

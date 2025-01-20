@@ -7,7 +7,7 @@ const ROUTES = ["Home", "About", "Services", "Contact", "Drones"];
 function Nav() {
 const [mobileMenu, setMobileMenu] = useState(true)
     return (
-        <nav className="flex lg:flex-row sm:flex-col flex-wrap justify-between items-center bg-black  border-[#07C0EA]">
+        <nav className="flex md:flex-row sm:flex-col flex-wrap justify-between items-center bg-black  border-[#07C0EA]">
             <a href="#" class="p-3">
            <img className="lg:w-[400px] lg:h-[300px] lg:mx-9" src={logo} />
            </a>

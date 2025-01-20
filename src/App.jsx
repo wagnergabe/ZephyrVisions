@@ -8,7 +8,7 @@ function App() {
   return (
 <div className="h-full w-full border-blue-500">
   <Nav/>
-  <Main />
+  <Main/>
   <Footer />
 </div>
   );
