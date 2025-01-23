@@ -7,6 +7,7 @@ import avata from '../assets/avata.webp';
 
 const Main = () => {
     return (
+        <>
         <main class="flex flex-col items-center w-screen h-full justify-center">
             <img class="border-8 border-y-[#07C0EA] w-full shadow-2xl h-auto" src={hero} />
             
@@ -28,13 +29,14 @@ const Main = () => {
             </section>
             <div class="w-full h-[40vh] flex flex-col lg:flex-row justify-between mb-20 bg-black">
                 <div class="m-auto">
-                <img src={avata} class=" m-0 p-0 w-[300px] h-[30vh] motion-translate-y motion-translat" />
+                <img src={avata} class="w-[300px] h-[40vh] " />
                 </div>
                 <div class="m-auto h-auto">
                 <button class="bg-[#58595B] w-[200px] h-[100px] rounded-xl text-white text-2xl font-bold">Drones</button>
                 </div>
             </div>
         </main>
+        </>
     )
 }
 

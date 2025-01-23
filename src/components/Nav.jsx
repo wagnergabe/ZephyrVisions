@@ -1,13 +1,14 @@
 import logo from '../assets/logo_official.png'
 import { RxHamburgerMenu } from 'react-icons/rx';
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 const ROUTES = ["Home", "About", "Services", "Contact", "Drones"];
 
 function Nav() {
 const [mobileMenu, setMobileMenu] = useState(true)
     return (
-        <nav className="flex md:flex-row sm:flex-col flex-wrap justify-between items-center bg-black  border-[#07C0EA]">
+        <nav className="flex flex-col lg:flex-row flex-wrap justify-between items-center bg-black  border-[#07C0EA]">
             <a href="#" class="p-3">
            <img className="lg:w-[400px] lg:h-[300px] lg:mx-9" src={logo} />
            </a>
@@ -20,7 +21,20 @@ const [mobileMenu, setMobileMenu] = useState(true)
            <div className={`${!mobileMenu ? "" : 'hidden'} w-full lg:w-auto lg:block`}>
             <ul className=" lg:space-x-8 flex flex-col lg:flex-row  bg-gray-200 lg:bg-transparent lg:border-none p-4 text-lg border rounded border-grey-100 border-grey-lg">
                 {ROUTES.map((item, index) => { 
-                   return <li className={`p-2 px-3 text-black cursor-pointer ${index === 0 ? "bg-[#07C0EA] text-white rounded-md lg:bg-transparent lg:text-[#11BBEB] lg:text-2xl"  : "lg:text-white lg:text-2xl hover:bg-gray-400"}`} key={item}>{item}</li>
+                   return <li
+                   className={`p-2 px-3 text-black cursor-pointer ${
+                     index === 0
+                       ? "bg-[#07C0EA] text-white rounded-md lg:bg-transparent lg:text-[#11BBEB] lg:text-2xl"
+                       : "lg:text-white lg:text-2xl hover:bg-gray-400"
+                   }`}
+                   key={item}
+                 >
+                   {item === "Home" ? (
+                     <Link to="/">{item}</Link>
+                   ) : (
+                     <Link to={`/${item}`}>{item}</Link>
+                   )}
+                 </li>
                 })}
             </ul>
 
