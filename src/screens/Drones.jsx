@@ -7,12 +7,38 @@ const Drones = () => {
   return (
     <>
     <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-3">
-    <h2 className="text-9xl text-[#07C0EA] font-medium mt-3 mb-7">Drones</h2>
     <div className="flex flex-row justify-evenly w-full">
-      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === "indoor" ? null : 'indoor')}>Indoor</button>
-      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === "picVid" ? null : 'picVid')}>Picture/Video</button>
-      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === 'industrial' ? null : 'industrial')}>Industrial</button>
-    </div>
+  <button
+    className={`font-bold border-b-4 border-black text-2xl ${
+      activeButton === "indoor" ? "bg-gray-300" : ""
+    }`}
+    onClick={() => setActiveButton("indoor")}
+    disabled={activeButton === "indoor"}
+  >
+    Indoor
+  </button>
+
+  <button
+    className={`font-bold border-b-4 border-black text-2xl ${
+      activeButton === "picVid" ? "bg-gray-300" : ""
+    }`}
+    onClick={() => setActiveButton("picVid")}
+    disabled={activeButton === "picVid"}
+  >
+    Picture/Video
+  </button>
+
+  <button
+    className={`font-bold border-b-4 border-black text-2xl ${
+      activeButton === "industrial" ? "bg-gray-300" : ""
+    }`}
+    onClick={() => setActiveButton("industrial")}
+    disabled={activeButton === "industrial"}
+  >
+    Industrial
+  </button>
+</div>
+
 
 
 

@@ -5,7 +5,7 @@ import icon from '../assets/icon.png';
 
 const Footer = () => {
     return (
-        <footer class="bg-[#58595B] h-[60vh] w-full m-0 flex flex-col lg:flex-row justify-evenly items-center">
+        <footer class="bg-[#58595B] lg:h-[60vh] w-full m-0 flex flex-col lg:flex-row justify-evenly items-center">
             <div class = "">
                 <img src={icon} size={20} />
             </div>
