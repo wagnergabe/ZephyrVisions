@@ -6,29 +6,35 @@ const Drones = () => {
   // const [picVid, setPicVid] = useState(true)
   return (
     <>
-    <section className="flex flex-col items-center justify-between w-[100%] h-auto m-3">
-    <h2 className="">Drones</h2>
+    <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-3">
+    <h2 className="text-9xl text-[#07C0EA] font-medium mt-3 mb-7">Drones</h2>
     <div className="flex flex-row justify-evenly w-full">
-      <button className="font-bold border-b-4 border-black" onClick={() => setActiveButton(activeButton === "indoor" ? null : 'indoor')}>Indoor</button>
-      <button className="font-bold border-b-4 border-black" onClick={() => setActiveButton(activeButton === "picVid" ? null : 'picVid')}>Picture/Video</button>
-      <button className="font-bold border-b-4 border-black hidden">Industiral</button>
+      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === "indoor" ? null : 'indoor')}>Indoor</button>
+      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === "picVid" ? null : 'picVid')}>Picture/Video</button>
+      <button className="font-bold border-b-4 border-black text-2xl" onClick={() => setActiveButton(activeButton === 'industrial' ? null : 'industrial')}>Industrial</button>
     </div>
 
 
 
 
 {/* Avata 2*/}
+
+<h2 className = {`${
+    activeButton === 'indoor' ? 
+    "text-7xl px-20 mt-8"
+    : "hidden"
+}`}>Avata 2</h2>
   
 <main
   className={`${
     activeButton === "indoor"
-      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly mt-8"
+      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
       : ""
   }`}
 >
   {activeButton === "indoor" && (
     <>
-      <aside className="flex flex-col w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
         <div className="my-[20px]">
           <p className="font-bold">Indoor Maneuverability</p>
           <p>
@@ -46,15 +52,15 @@ const Drones = () => {
         </div>
       </aside>
 
-      <div className="flex flex-col items-center justify-center max-w-[50%] max-h-[50%]">
+      <div className="flex flex-col items-center justify-center max-w-[40%] max-h-[40%]">
         <img
           src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg"
-          className="motion-scale-in-75 "
+          className="motion-scale-in-75"
           alt="Indoor drone"
         />
       </div>
 
-      <aside className="flex flex-col w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
         <div className="my-[20px]">
           <p className="font-bold">Focus Mode / Goggles</p>
           <p>
@@ -77,16 +83,24 @@ const Drones = () => {
 
     {/* Mini 4 Pro */}
 
+<h2 className = {`${
+    activeButton === 'picVid' ? 
+    "text-7xl px-20 mt-8"
+    : "hidden"
+}`}>Mini 4 Pro</h2>
+
 <main
    className={`${
     activeButton === "picVid"
-      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly mt-8"
+      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
       : ""
   }`}
 >
+ 
   {activeButton === 'picVid' && (
     <>
-      <aside className="flex flex-col w-[20%] items-center text-center my-[30px]">
+
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
         <div className="my-[20px]">
           <p className="font-bold">4K HDR Video Recording</p>
           <p>
@@ -111,7 +125,7 @@ const Drones = () => {
         />
       </div>
 
-      <aside className="flex flex-col w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px]">
         <div className="my-[20px]">
           <p className="font-bold">Vertical Shooting Capabilities</p>
           <p>
@@ -130,6 +144,65 @@ const Drones = () => {
     </>
   )}
 </main>
+
+{/* Matrice 4T */}
+
+<h2 className = {`${
+    activeButton === 'industrial' ? 
+    "text-7xl px-20 mt-8"
+    : "hidden"
+}`}>Matrice 4T</h2>
+
+<main
+  className={`${
+    activeButton === "industrial"
+      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
+      : ""
+  }`}
+>
+  {activeButton === "industrial" && (
+    <>
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
+        <div className="my-[20px]">
+          <p className="font-bold">Thermal Imaging</p>
+          <p>
+          perfect for inspections, search-and-rescue missions, and heat monitoring.
+          </p>
+        </div>
+        <div>
+          <p className="font-bold">56x magnification zoom</p>
+          <p>
+          captures detailed visuals, ideal for industrial inspections and mapping.
+          </p>
+        </div>
+      </aside>
+
+      <div className="flex flex-col items-center justify-center max-w-[40%] max-h-[40%]">
+        <img
+          src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/b49fb59abc89fd799b252633ad70618f@origin.jpg?format=webp"
+          className="motion-scale-in-75 "
+          alt="Indoor drone"
+        />
+      </div>
+
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
+        <div className="my-[20px]">
+          <p className="font-bold"> RTK precision positioning</p>
+          <p>
+          ensures centimeter-level accuracy, making it a top choice for surveying and construction projects.
+          </p>
+        </div>
+        <div>
+          <p className="font-bold">Weather Resistant</p>
+          <p>
+          Perform reliably in harsh conditions like rain or strong winds, ensuring uninterupped operations.
+          </p>
+        </div>
+      </aside>
+    </>
+  )}
+</main>
+
 
 
 
