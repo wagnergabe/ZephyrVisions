@@ -15,8 +15,8 @@ function App() {
 </div> */}
 <Nav/>
 <Routes>
-  <Route path='/' element={<Main navLocation="1"/>}></Route>
-  <Route path='/drones' element={<Drones navLocation="2"/>}></Route>
+  <Route path='/' element={<Main />}></Route>
+  <Route path='/drones' element={<Drones/>}></Route>
  </Routes>
  <Footer/>
 </>
