@@ -1,5 +1,35 @@
+import Swal from 'sweetalert2';
 
 const Contact = () => {
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(event.target);
+    
+        formData.append("access_key", "4ceb2810-2c25-465f-a65c-93d59220b5f5");
+    
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: json
+        }).then((res) => res.json());
+    
+        if (res.success) {
+            Swal.fire({
+                title: "Thank You!",
+                text: "I'll get back to you soon!",
+                icon: "success"
+              });
+              form.reset()
+        }
+      };
+      
   return (
     <main className="w-full h-full"> 
     <div class="my-6 w-full h-full">
@@ -67,16 +97,16 @@ const Contact = () => {
           </div>
         </div>
 
-        <form class="ml-auo space-y-4">
-          <input type='text' placeholder='Name'
+        <form class="ml-auo space-y-4" onSubmit={onSubmit}>
+          <input type='text' placeholder='Name' name='name' required
             class="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-          <input type='email' placeholder='Email'
+          <input type='email' placeholder='Email' name='email' required
             class="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-          <input type='text' placeholder='Subject'
+          <input type='text' placeholder='Subject' name='subject'
             class="w-full text-gray-800 rounded-md py-2.5 px-4 border text-sm outline-none focus:border-blue-500" />
-          <textarea placeholder='Message' rows="6"
+          <textarea placeholder='Message' rows="6" name='message'
             class="w-full text-gray-800 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
-          <button type='button'
+          <button type='submit'
             class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-sm px-4 py-2.5 w-full !mt-6">Send</button>
         </form>
       </div>
