@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 const Drones = () => {
   const [activeButton, setActiveButton] = useState("indoor")
-  // const [indoor, setIndoor] = useState(true)
-  // const [picVid, setPicVid] = useState(true)
+
   return (
     <>
     <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-3">
