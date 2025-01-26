@@ -3,7 +3,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import {useState} from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-const ROUTES = ["About", "Services", "Contact", "Drones"];
+const ROUTES = ["About", "Gallery", "Contact", "Drones"];
 
 function Nav() {
 

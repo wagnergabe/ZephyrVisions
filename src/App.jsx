@@ -4,6 +4,7 @@ import Main from './screens/Main';
 import Drones from './screens/Drones';
 import Contact from './screens/Contact';
 import About from './screens/About';
+import Gallery from './screens/Gallery'
 import Footer from './components/Footer';
 
 
@@ -22,6 +23,7 @@ function App() {
   <Route path='/drones' element={<Drones/>}></Route>
   <Route path='/about' element={<About />}> </Route>
   <Route path='/contact' element={<Contact />}></Route>
+  <Route path='/gallery' element={<Gallery />}></Route>
   
 
  </Routes>
