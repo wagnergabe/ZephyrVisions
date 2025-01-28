@@ -11,7 +11,7 @@ function Nav() {
     const path = location.pathname.split("/").filter(Boolean); 
     console.log(path)
 
-const [mobileMenu, setMobileMenu] = useState(false)
+const [mobileMenu, setMobileMenu] = useState(true)
     return (
         <nav className="flex flex-col lg:flex-row flex-wrap justify-between items-center bg-black border-[#07C0EA]">
         <div className="h-1/2 w-1/2 lg:h-1/6 lg:w-1/4 lg:mx-20">

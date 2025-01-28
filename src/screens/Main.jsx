@@ -7,7 +7,7 @@ import { GiDeliveryDrone } from "react-icons/gi";
 import { FcInspection } from "react-icons/fc"; 
 import { AiOutlineHome } from "react-icons/ai"; 
 import { BiPhotoAlbum } from "react-icons/bi"; 
-import hero from '../assets/hero.png';
+import vid from '../assets/home_vid.mp4';
 import avata from '../assets/avata.webp';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,15 @@ const Main = () => {
     return (
         <>
         <main class="flex flex-col items-center w-screen h-full justify-center">
-            <img class="border-8 border-y-[#07C0EA] w-full shadow-2xl h-auto" src={hero} />
+        <video
+className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl object-cover"
+
+  src={vid} 
+  autoPlay
+  loop
+  muted
+  playsInline
+></video>
             
             <section class="lg:w-[75%]">
             <h2 class="text-5xl text-center translate-y-16 text-[#07C0EA]">Services</h2>    
