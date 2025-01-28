@@ -5,7 +5,7 @@ const Drones = () => {
 
   return (
     <>
-    <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-3">
+    <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-5">
     <div className="flex flex-row justify-evenly w-full">
   <button
     className={`font-bold border-b-4 border-black text-2xl ${
@@ -14,7 +14,7 @@ const Drones = () => {
     onClick={() => setActiveButton("indoor")}
     disabled={activeButton === "indoor"}
   >
-    Indoor
+    INDOOR
   </button>
 
   <button
@@ -24,7 +24,7 @@ const Drones = () => {
     onClick={() => setActiveButton("picVid")}
     disabled={activeButton === "picVid"}
   >
-    Picture/Video
+    PICTURE/VIDEO
   </button>
 
   <button
@@ -34,7 +34,7 @@ const Drones = () => {
     onClick={() => setActiveButton("industrial")}
     disabled={activeButton === "industrial"}
   >
-    Industrial
+    INDUSTRIAL
   </button>
 </div>
 

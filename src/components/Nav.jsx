@@ -7,23 +7,29 @@ const ROUTES = ["About", "Gallery", "Contact", "Drones"];
 
 function Nav() {
 
-    const location = useLocation(); // Get the current URL path
-    const path = location.pathname.split("/").filter(Boolean); // Split and filter the URL
+    const location = useLocation();
+    const path = location.pathname.split("/").filter(Boolean); 
     console.log(path)
 
-const [mobileMenu, setMobileMenu] = useState(true)
+const [mobileMenu, setMobileMenu] = useState(false)
     return (
-        <nav className="flex flex-col lg:flex-row flex-wrap justify-between items-center bg-black  border-[#07C0EA]">
-            <Link to="/" href="#" class="p-3">
-           <img className="lg:w-[400px] lg:h-[300px] lg:mx-9" src={logo} />
-           </Link>
+        <nav className="flex flex-col lg:flex-row flex-wrap justify-between items-center bg-black border-[#07C0EA]">
+        <div className="h-1/2 w-1/2 lg:h-1/6 lg:w-1/4 lg:mx-20">
+          <Link to="/" className="block h-full w-full p-3">
+            <img
+              className="h-full w-full object-contain"
+              src={logo}
+              alt="Logo"
+            />
+          </Link>
+           </div>
 
            <button className=" p-2 m-5 text-white bg-[#07C0EA] hover:bg-black focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden" onClick={() => {setMobileMenu(!mobileMenu)}}>
             <RxHamburgerMenu size={25} />
            </button>
 
            {/* Menu Items */}
-           <div className={`${!mobileMenu ? "" : 'hidden'} w-full lg:w-auto lg:block`}>
+           <div className={`${!mobileMenu ? "animate-slideDown" : 'hidden'} w-full lg:w-auto lg:block`}>
             <ul className=" lg:space-x-8 flex flex-col lg:flex-row  bg-gray-200 lg:bg-transparent lg:border-none p-4 text-lg border rounded border-grey-100 border-grey-lg">
                 {ROUTES.map((item, index) => { 
                    return <li

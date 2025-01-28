@@ -4,7 +4,7 @@ const Gallery = () => {
 
     return(
         <>
-        hi
+        <p class="text-3xl text-center h-[90vh] w-full flex flex-col justify-center">Projects coming soon!</p>
         </>
     )
 
