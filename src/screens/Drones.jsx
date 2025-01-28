@@ -8,7 +8,7 @@ const Drones = () => {
     <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-5">
     <div className="flex flex-row justify-evenly w-full">
   <button
-    className={`font-bold border-b-4 border-black text-2xl ${
+    className={`font-bold border-b-4 border-black lg:text-2xl ${
       activeButton === "indoor" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("indoor")}
@@ -18,7 +18,7 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold border-b-4 border-black text-2xl ${
+    className={`font-bold border-b-4 border-black lg:text-2xl ${
       activeButton === "picVid" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("picVid")}
@@ -28,7 +28,7 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold border-b-4 border-black text-2xl ${
+    className={`font-bold border-b-4 border-black lg:text-2xl ${
       activeButton === "industrial" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("industrial")}
