@@ -6,9 +6,9 @@ const Drones = () => {
   return (
     <>
     <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-5">
-    <div className="flex flex-row justify-evenly w-full">
+    <div className="flex flex-col my-3 md:flex-row justify-evenly w-full">
   <button
-    className={`font-bold border-b-4 border-black lg:text-2xl ${
+    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
       activeButton === "indoor" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("indoor")}
@@ -18,7 +18,7 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold border-b-4 border-black lg:text-2xl ${
+    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
       activeButton === "picVid" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("picVid")}
@@ -28,7 +28,7 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold border-b-4 border-black lg:text-2xl ${
+    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
       activeButton === "industrial" ? "bg-gray-300" : ""
     }`}
     onClick={() => setActiveButton("industrial")}
@@ -46,7 +46,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'indoor' ? 
-    "text-7xl px-20 mt-8"
+    "text-7xl text-center px-20 mt-8"
     : "hidden"
 }`}>Avata 2</h2>
   
@@ -77,7 +77,7 @@ const Drones = () => {
         </div>
       </aside>
 
-      <div className="flex flex-col items-center justify-center max-w-[40%] max-h-[40%]">
+      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
         <img
           src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg"
           className="motion-scale-in-75"
@@ -110,7 +110,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'picVid' ? 
-    "text-7xl px-20 mt-8"
+    "text-7xl px-20 text-center  mt-8"
     : "hidden"
 }`}>Mini 4 Pro</h2>
 
@@ -142,7 +142,7 @@ const Drones = () => {
         </div>
       </aside>
 
-      <div className="flex flex-col items-center justify-center max-w-[50%] max-h-[50%]">
+      <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
         <img
           src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/f96def8770cb7529d7a98731fa2117dd@ultra.jpg"
           className="motion-scale-in-75"
@@ -174,7 +174,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'industrial' ? 
-    "text-7xl px-20 mt-8"
+    "text-7xl px-20  text-center mt-8"
     : "hidden"
 }`}>Matrice 4T</h2>
 
@@ -202,10 +202,10 @@ const Drones = () => {
         </div>
       </aside>
 
-      <div className="flex flex-col items-center justify-center max-w-[40%] max-h-[40%]">
+      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
         <img
           src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/b49fb59abc89fd799b252633ad70618f@origin.jpg?format=webp"
-          className="motion-scale-in-75 "
+          className="motion-scale-in-75"
           alt="Indoor drone"
         />
       </div>

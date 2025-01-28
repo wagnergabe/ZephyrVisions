@@ -29,7 +29,7 @@ const [mobileMenu, setMobileMenu] = useState(true)
            </button>
 
            {/* Menu Items */}
-           <div className={`${!mobileMenu ? "animate-slideDown" : 'hidden'} w-full lg:w-auto lg:block`}>
+           <div className={`${!mobileMenu ? "" : 'hidden'} w-full lg:w-auto lg:block`}>
             <ul className=" lg:space-x-8 flex flex-col lg:flex-row  bg-gray-200 lg:bg-transparent lg:border-none p-4 text-lg border rounded border-grey-100 border-grey-lg">
                 {ROUTES.map((item, index) => { 
                    return <li
