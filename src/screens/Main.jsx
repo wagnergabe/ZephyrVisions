@@ -11,6 +11,7 @@ import vid from '../assets/home_vid.mp4';
 import avata from '../assets/avata.webp';
 import { Link } from 'react-router-dom';
 
+
 const Main = () => {
     return (
         <>
@@ -32,7 +33,7 @@ className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl ob
                         <h3 class="font-bold text-2xl text-center">Commercial Real Estate Aerial Photography & Videography</h3>
                     </li>
                     <li class="flex flex-col justify-center items-center mx-3 my-3 flex-1"><AiFillPicture size={80} color="#07C0EA" />
-                    <h3 class="font-bold text-2xl text-center">Aerial Photography/Videography</h3>
+                    <h3 class="font-bold text-2xl text-center">Aerial Photography/ Videography</h3>
                     </li>
                     <li class="flex flex-col justify-center items-center mx-3 my-3 flex-1"><FaHardHat size={80} color="#07C0EA" />
                     <h3 class="font-bold text-2xl text-center">Architect/ Engineering/ Constuction </h3>
