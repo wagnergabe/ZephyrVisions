@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Drones = () => {
   const [activeButton, setActiveButton] = useState("indoor")
 
+  const useScrollToTop = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []); 
+  };
   return (
     <>
+    {useScrollToTop()}
     <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-5">
     <div className="flex flex-col my-3 md:flex-row justify-evenly w-full">
   <button

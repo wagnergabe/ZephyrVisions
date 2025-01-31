@@ -1,6 +1,7 @@
 import icon from "../assets/icon.png";
 
-import React from "react";
+import { Link } from 'react-router-dom'
+
 import {
   FaFacebook,
   FaTwitter,
@@ -15,7 +16,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center">
         {/* Logo */}
         <div className="mb-6 lg:mb-0">
-          <img className="w-40 h-40" src={icon} />
+          <Link to ='/'><img className="w-40 h-40" src={icon} /></Link>
         </div>
 
         {/* Social Media Links */}
@@ -39,7 +40,7 @@ const Footer = () => {
             <FaTwitter size={40} />
           </a>
           <a
-            href="https://www.instagram.com/zvdrones/"
+            href="https://www.instagram.com/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"

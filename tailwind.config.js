@@ -21,8 +21,10 @@ export default {
         float: 'float 2s ease-in-out infinite', 
         slideDown: 'slideDown 0.5s ease-in-out'
       },
-      
     },
+    backgroundImage: {
+      'parallax': 'url("../src/assets/frozen-red.jpg")'
+    }
   },
   plugins: [require('tailwindcss-motion')],
 }

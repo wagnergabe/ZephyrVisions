@@ -7,14 +7,22 @@ import { GiDeliveryDrone } from "react-icons/gi";
 import { FcInspection } from "react-icons/fc"; 
 import { AiOutlineHome } from "react-icons/ai"; 
 import { BiPhotoAlbum } from "react-icons/bi"; 
+import Banner from '../components/Banner.jsx';
 import vid from '../assets/home_vid.mp4';
 import avata from '../assets/avata.webp';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 
 const Main = () => {
+  const useScrollToTop = () => {
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, []); // Empty dependency array ensures this runs only once on mount
+  };
     return (
-        <>
+      <>
+      {useScrollToTop()}
         <main class="flex flex-col items-center w-screen h-full justify-center">
         <video
 className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl object-cover"
@@ -60,6 +68,8 @@ className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl ob
     </Link>
   </div>
 </div>
+
+<Banner />
 
 
             <section className="max-w-4xl mx-auto px-6 py-16 text-gray-800">
