@@ -10,12 +10,12 @@ const Drones = () => {
   };
   return (
     <>
-    {useScrollToTop()}
-    <section className="flex flex-col items-center justify-between w-[100%] h-auto mt-5">
-    <div className="flex flex-col my-3 md:flex-row justify-evenly w-full">
+    {/* {useScrollToTop()} */}
+    <section className="flex flex-col items-center justify-center  md:justify-between w-[80%] h-auto mx-auto mt-5 font-poppins">
+    <div className="flex flex-col justify-around my-3 md:flex-row">
   <button
-    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
-      activeButton === "indoor" ? "bg-gray-300" : ""
+    className={`font-bold md:border-b-4 my-2 mx-10 border-black lg:text-2xl ${
+      activeButton === "indoor" ? "py-2 px-4 bg-gray-300 border rounded" : ""
     }`}
     onClick={() => setActiveButton("indoor")}
     disabled={activeButton === "indoor"}
@@ -24,8 +24,8 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
-      activeButton === "picVid" ? "bg-gray-300" : ""
+    className={` my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
+      activeButton === "picVid" ? "py-2 px-4 bg-gray-300 border rounded" : ""
     }`}
     onClick={() => setActiveButton("picVid")}
     disabled={activeButton === "picVid"}
@@ -34,8 +34,8 @@ const Drones = () => {
   </button>
 
   <button
-    className={`font-bold md:border-b-4 my-2 border-black lg:text-2xl ${
-      activeButton === "industrial" ? "bg-gray-300" : ""
+    className={`font-bold md:border-b-4 mx-10 my-2 border-black lg:text-2xl ${
+      activeButton === "industrial" ? "py-2 px-4 bg-gray-300 border rounded" : ""
     }`}
     onClick={() => setActiveButton("industrial")}
     disabled={activeButton === "industrial"}
@@ -52,7 +52,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'indoor' ? 
-    "text-7xl text-center px-20 mt-8"
+    "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
     : "hidden"
 }`}>Avata 2</h2>
   
@@ -65,16 +65,15 @@ const Drones = () => {
 >
   {activeButton === "indoor" && (
     <>
-      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
-        <div className="my-[20px]">
-          <p className="font-bold">Indoor Maneuverability</p>
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
+        <div className="my-[20px] max-h-64">
+          <p className="font-bold ">Indoor Maneuverability</p>
           <p>
             Easily maneuver indoors and capture unique living spaces and rooms
-            of your home. Proficient in indoor drone tours for all your real
-            estate marketing and personal needs.
+            of your home. 
           </p>
         </div>
-        <div>
+        <div className="max-h-64">
           <p className="font-bold">Still Photography Mode</p>
           <p>
             Still photography is perfect for capturing aerial shots and custom
@@ -91,15 +90,15 @@ const Drones = () => {
         />
       </div>
 
-      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
-        <div className="my-[20px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
+        <div className="my-[20px] max-h-64">
           <p className="font-bold">Focus Mode / Goggles</p>
-          <p>
+          <p className>
             Easily maneuver in and out of tight spaces with precision goggles
             and superior focus mode.
           </p>
         </div>
-        <div>
+        <div className="max-h-64">
           <p className="font-bold">4K Stabilized Video</p>
           <p>
             Stabilized 4K video allows for precision videos with minimal
@@ -116,7 +115,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'picVid' ? 
-    "text-7xl px-20 text-center  mt-8"
+    "text-7xl px-20 text-center  mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono motion-preset-slide-down"
     : "hidden"
 }`}>Mini 4 Pro</h2>
 
@@ -131,7 +130,7 @@ const Drones = () => {
   {activeButton === 'picVid' && (
     <>
 
-      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
         <div className="my-[20px]">
           <p className="font-bold">4K HDR Video Recording</p>
           <p>
@@ -156,7 +155,7 @@ const Drones = () => {
         />
       </div>
 
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
         <div className="my-[20px]">
           <p className="font-bold">Vertical Shooting Capabilities</p>
           <p>
@@ -180,7 +179,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'industrial' ? 
-    "text-7xl px-20  text-center mt-8"
+    "text-7xl px-20  text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
     : "hidden"
 }`}>Matrice 4T</h2>
 
@@ -193,7 +192,7 @@ const Drones = () => {
 >
   {activeButton === "industrial" && (
     <>
-      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
         <div className="my-[20px]">
           <p className="font-bold">Thermal Imaging</p>
           <p>
@@ -208,7 +207,7 @@ const Drones = () => {
         </div>
       </aside>
 
-      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
+      <div className="flex flex-col items-center justify-center sm:max-w-[40%] sm:max-h-[40%]">
         <img
           src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/b49fb59abc89fd799b252633ad70618f@origin.jpg?format=webp"
           className="motion-scale-in-75"
@@ -216,7 +215,7 @@ const Drones = () => {
         />
       </div>
 
-      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px]">
+      <aside className="flex flex-col  lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
         <div className="my-[20px]">
           <p className="font-bold"> RTK precision positioning</p>
           <p>

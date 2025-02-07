@@ -65,6 +65,7 @@ const Footer = () => {
             <FaPhone className="text-gray-400" />
             <span>+1 (320) 237-1703</span>
           </p>
+          <p className="text-sm">REACT⚛️ website made by Gabriel</p>
         </div>
       </div>
     </div>

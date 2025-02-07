@@ -12,11 +12,6 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-{/* <div className="h-full w-full border-blue-500">
-  <Nav/>
-  <Main/>
-  <Footer />
-</div> */}
 <Nav/>
 <Routes>
   <Route path='/' element={<Main />}></Route>

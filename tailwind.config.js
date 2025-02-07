@@ -21,6 +21,11 @@ export default {
         float: 'float 2s ease-in-out infinite', 
         slideDown: 'slideDown 0.5s ease-in-out'
       },
+      fontFamily: {
+        'roboto': ['Roboto', 'sans-serif'], // Example: Roboto
+        'poppins': ['Poppins', 'sans-serif'], // Example: Poppins
+        'space-mono': ['Space Mono', 'monospace'], // Example: Space Mono
+      }
     },
     backgroundImage: {
       'parallax': 'url("../src/assets/frozen-red.jpg")'
