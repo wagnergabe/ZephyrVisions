@@ -17,7 +17,9 @@ function Nav() {
 const [mobileMenu, setMobileMenu] = useState(true)
     return (
         <nav className="flex flex-wrap lg:flex-row flex-col items-center justify-between bg-black px-3">
-
+          <div>
+          <p class="text-yellow-300 text-3xl absolute text-center top-0 left-0">UNDER CONSTRUCTION - Thank you for visiting!</p>
+          </div>
           <Link to="/">
             <img
               className="h-80 w-80"

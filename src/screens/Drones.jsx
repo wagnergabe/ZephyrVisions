@@ -10,7 +10,7 @@ const Drones = () => {
   };
   return (
     <>
-    {/* {useScrollToTop()} */}
+    {useScrollToTop()}
     <section className="flex flex-col items-center justify-center  md:justify-between w-[80%] h-auto mx-auto mt-5 font-poppins">
     <div className="flex flex-col justify-around my-3 md:flex-row">
   <button
@@ -182,6 +182,7 @@ const Drones = () => {
     "text-7xl px-20  text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
     : "hidden"
 }`}>Matrice 4T</h2>
+<p class="text-center text-3xl">Coming soon!</p>
 
 <main
   className={`${

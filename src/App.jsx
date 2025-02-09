@@ -6,6 +6,7 @@ import Contact from './screens/Contact';
 import About from './screens/About';
 import Gallery from './screens/Gallery'
 import Footer from './components/Footer';
+import Services from './screens/Services'
 
 
 
@@ -19,6 +20,7 @@ function App() {
   <Route path='/about' element={<About />}> </Route>
   <Route path='/contact' element={<Contact />}></Route>
   <Route path='/gallery' element={<Gallery />}></Route>
+  <Route path='/services' element={<Services />}></Route>
   
 
  </Routes>
