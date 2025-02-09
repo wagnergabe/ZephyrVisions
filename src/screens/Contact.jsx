@@ -84,7 +84,7 @@ const Contact = () => {
                 </a>
               </li>
               <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                <a href="javascript:void(0)">
+                <a href="https://www.instagram.com/zvdrones/">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
                     viewBox="0 0 24 24">
                     <path

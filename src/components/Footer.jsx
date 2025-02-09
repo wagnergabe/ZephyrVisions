@@ -40,7 +40,7 @@ const Footer = () => {
             <FaTwitter size={40} />
           </a>
           <a
-            href="https://www.instagram.com/"
+            href="https://www.instagram.com/zvdrones"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
