@@ -4,9 +4,7 @@ const About = () => {
   return (
     <section className="py-12 lg:py-20 bg-gray-100"> 
       <div className="container mx-auto px-4 lg:px-6 flex flex-col lg:flex-row items-center justify-center">
-        <div className="w-full lg:w-1/2 mb-8 lg:mb-0"> 
-          <img src={vr} alt="Drone Photography" className="w-full rounded-lg shadow-lg" /> 
-        </div>
+        
         <div className="w-full lg:w-1/2">
           <div className="prose lg:prose-xl max-w-prose mx-auto"> 
             <h2 className="text-3xl font-bold mb-4">About Zephyr Visions</h2> 
