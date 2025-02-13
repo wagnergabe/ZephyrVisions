@@ -5,6 +5,7 @@ import Drones from './screens/Drones';
 import Contact from './screens/Contact';
 import About from './screens/About';
 import Gallery from './screens/Gallery'
+import Photography from './screens/Photography';
 import Footer from './components/Footer';
 import Services from './screens/Services'
 
@@ -21,6 +22,7 @@ function App() {
   <Route path='/contact' element={<Contact />}></Route>
   <Route path='/gallery' element={<Gallery />}></Route>
   <Route path='/services' element={<Services />}></Route>
+  <Route path='/services/real-estate' element={<Photography />}></Route>
   
 
  </Routes>
