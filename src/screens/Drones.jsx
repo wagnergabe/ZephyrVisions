@@ -181,8 +181,8 @@ const Drones = () => {
     activeButton === 'industrial' ? 
     "text-7xl px-20  text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
     : "hidden"
-}`}>Matrice 4T</h2>
-<p class="text-center text-3xl">Coming soon!</p>
+}`}>Matrice 4T<p class="text-center text-3xl text-black">Coming soon!</p></h2>
+
 
 <main
   className={`${
