@@ -17,6 +17,9 @@ export default {
           "100%": { transform: "translateY(0)", opacity: "1" },
         }
       },
+      colors: {
+        "logo-blue": "#07C0EA",
+      },
       animation: {
         float: 'float 2s ease-in-out infinite', 
         slideDown: 'slideDown 0.5s ease-in-out'

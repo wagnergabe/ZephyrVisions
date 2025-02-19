@@ -8,6 +8,8 @@ import Gallery from './screens/Gallery'
 import Photography from './screens/Photography';
 import Footer from './components/Footer';
 import Services from './screens/Services'
+import Construction from './screens/Construction';
+import RoofInspection from './screens/RoofInspection';
 
 
 
@@ -23,6 +25,8 @@ function App() {
   <Route path='/gallery' element={<Gallery />}></Route>
   <Route path='/services' element={<Services />}></Route>
   <Route path='/services/real-estate' element={<Photography />}></Route>
+  <Route path='/services/construction' element={<Construction />}></Route>
+  <Route path='/services/inspections' element={<RoofInspection />}></Route>
   
 
  </Routes>
