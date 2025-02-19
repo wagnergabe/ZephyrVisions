@@ -115,7 +115,7 @@ const Drones = () => {
 
 <h2 className = {`${
     activeButton === 'picVid' ? 
-    "text-7xl px-20 text-center  mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono motion-preset-slide-down"
+    "text-7xl px-20 text-center  mt-8 text-[#07C0EA] font-space-mono motion-preset-slide-down"
     : "hidden"
 }`}>Mini 4 Pro</h2>
 
