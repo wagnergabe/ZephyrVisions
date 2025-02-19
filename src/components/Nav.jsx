@@ -24,7 +24,7 @@ function Nav() {
     const [servicesDropdown, setServicesDropdown] = useState(false); 
 
     return (
-        <nav className="flex flex-wrap lg:flex-row flex-col items-center justify-between bg-black px-3 relative">
+        <nav className="flex flex-wrap lg:flex-row flex-col items-center justify-between bg-black px-3 relative z-10">
           {/* Under Construction Banner */}
           <div>
             <p className="text-yellow-300 text-3xl absolute text-center top-0 left-0 w-full">

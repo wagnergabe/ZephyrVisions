@@ -26,7 +26,7 @@ const Main = () => {
       {useScrollToTop()}
         <main class="flex flex-col items-center w-screen h-full justify-center">
         <video
-className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl object-cover"
+className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl object-cover z-1"
 
   src={vid} 
   autoPlay
