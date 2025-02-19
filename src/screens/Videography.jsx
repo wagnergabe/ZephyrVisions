@@ -26,7 +26,7 @@ export default function Videography() {
           <Film className="w-14 h-14 text-logo-blue mb-4" />
           <h2 className="text-2xl font-semibold text-gray-700 mb-3">Professional Editing</h2>
           <p className="text-gray-600 text-center">
-            Post-production services, color grading, and seamless video transitions for high-end results
+            Post-production services, color grading, and seamless video transitions for high-end results.
           </p>
         </div>
 

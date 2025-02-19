@@ -1,6 +1,6 @@
 import { CheckCircle, Building, Home } from "lucide-react";
 
-export default function DroneInspectionService() {
+export default function RoofInspection() {
   return (
     <div className="flex flex-col items-center justify-center p-8 bg-gray-100 min-h-screen">
       <div className="text-center">
