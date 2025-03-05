@@ -81,6 +81,7 @@ function Nav() {
                     <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/construction">Construction Monitoring</Link></li>
                     <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/inspections">Roof & Structural Inspections</Link></li>
                     <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/mapping">Aerial Mapping & 3D Modeling</Link></li>
+                    <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/infared">Thermal Imaging</Link></li>
                     <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/events">Event Coverage</Link></li>
                     <li className="px-4 py-2 hover:bg-gray-100"><Link to="/services/fpv">FPV Indoor/Outdoor Flythroughs</Link></li>
                   </ul>

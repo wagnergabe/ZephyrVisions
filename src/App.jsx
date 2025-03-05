@@ -9,7 +9,9 @@ import Photography from './screens/Photography';
 import Footer from './components/Footer';
 import Services from './screens/Services'
 import Construction from './screens/Construction';
-import Videography from './screens/Videography'
+import Videography from './screens/Videography';
+import Infared from './screens/Infared';
+import Roof from './screens/Roof';
 
 
 
@@ -27,6 +29,8 @@ function App() {
   <Route path='/services/real-estate' element={<Photography />}></Route>
   <Route path='/services/construction' element={<Construction />}></Route>
   <Route path='/services/videography' element={<Videography />}></Route>
+  <Route path='/services/infared' element={<Infared />}></Route>
+  <Route path='/services/inspections' element={<Roof />}></Route>
   
 
  </Routes>
