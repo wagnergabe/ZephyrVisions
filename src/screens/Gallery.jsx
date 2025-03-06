@@ -47,16 +47,21 @@ const VideoCard = ({ title, videoUrl, thumbnailUrl }) => {
 const Gallery = () => {
     return (
       <div className="container mx-auto p-4">
-        <h2 className="text-3xl font-bold mb-6 text-center">Video Gallery</h2>
+        <h2 className="text-3xl font-bold mb-6 text-center text-logo-blue">Video Gallery</h2>
         <div className="flex flex-wrap justify-center">
-          <div className="w-full md:w-1/2 lg:w-1/2">
+          <div className="w-full md:w-1/2 lg:w-1/2 text-center space-y-9">
             <VideoCard
               title="Winter Drone Shots in New Hope, MN"
               videoUrl="https://youtu.be/hlzp04wIJVA"
               thumbnailUrl="https://img.youtube.com/vi/hlzp04wIJVA/maxresdefault.jpg"
+              className="mb-6"
+            />
+            <VideoCard
+              title="Warehouse Inventory"
+              videoUrl="https://www.youtube.com/watch?v=PGh04Wp5Crg"
+              thumbnailUrl="http://i3.ytimg.com/vi/PGh04Wp5Crg/hqdefault.jpg"
             />
           </div>
-          {/* Add more VideoCards here, each wrapped in a div with the same responsive width classes */}
         </div>
       </div>
     );
