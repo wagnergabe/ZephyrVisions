@@ -10,9 +10,12 @@ import { BiPhotoAlbum } from "react-icons/bi";
 import Banner from '../components/Banner.jsx';
 import vid from '../assets/home_vid.mp4';
 import avata from '../assets/avata.webp';
+import frontImg from '../assets/thermal_front.png'
+import backImg from '../assets/thermal_back.png'
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import mspNight from '../assets/msp-night.jpg';
+import ImageSlider from '../components/ImageSlider.jsx';
 
 
 const Main = () => {
@@ -34,7 +37,8 @@ className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl ob
   muted
   playsInline
 ></video>
-            
+
+
             <section class="lg:w-[75%]">
             <h2 class="text-5xl text-center translate-y-16 text-[#07C0EA]">Services</h2>    
             <ul class="flex flex-col lg:flex-row justify-between my-[200px] mx-3 items-center">
@@ -49,6 +53,8 @@ className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl ob
                     </li>
                 </ul>
             </section>
+
+
 
           
 
@@ -77,7 +83,39 @@ className="border-8 border-y-[#07C0EA] w-full h-[50vh] lg:h-[70vh] shadow-2xl ob
   </div>
 </div>
 
+<div className="flex flex-col items-center justify-center h-screen w-full bg-black text-white p-6 mb-64">
+  <h1 className="text-3xl font-bold mb-4 text-center">
+    Thermal Imaging with the DJI Matrice 4T
+  </h1>
+  <p className="text-lg text-gray-300 max-w-3xl text-center mb-6">
+    The <span className="font-semibold">DJI Matrice 4T</span> is equipped with 
+    high-resolution thermal sensors, allowing you to detect heat signatures, 
+    identify structural weaknesses, and enhance situational awareness in 
+    low-light or obscured conditions. Use the slider below to compare 
+    standard vs. thermal imaging.
+  </p>
+  <div className="relative flex justify-center items-center h-1/2 w-full max-w-4xl bg-gray-800 p-4 rounded-lg shadow-lg m">
+    <ImageSlider 
+      imageFront={frontImg}  
+      imageBack={backImg}   
+    />
+  </div>
+
+  <div className="mt-8 max-w-4xl text-center">
+    <h2 className="text-2xl font-semibold mb-3">Key Thermal Capabilities:</h2>
+    <ul className="text-gray-300 space-y-2 text-left">
+      <li>🔥 <span className="font-semibold">Heat Signature Detection</span> – Identify hotspots in buildings, electrical grids, and vehicles.</li>
+      <li>🔍 <span className="font-semibold">Structural Inspections</span> – Detect water leaks, insulation gaps, and energy loss in real estate and industrial settings.</li>
+      <li>🚑 <span className="font-semibold">Search & Rescue</span> – Locate missing persons in low-visibility conditions (night, fog, or smoke).</li>
+      <li>🏗️ <span className="font-semibold">Construction & Infrastructure Monitoring</span> – Analyze material stress points, overheating, and equipment efficiency.</li>
+      <li>🚜 <span className="font-semibold">Agriculture & Wildlife Management</span> – Monitor crop health, irrigation efficiency, and livestock body temperatures.</li>
+    </ul>
+  </div>
+</div>
+
+
 <Banner />
+
 
 
             <section className="max-w-4xl mx-auto px-6 py-16 text-gray-800">

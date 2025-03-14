@@ -244,7 +244,6 @@ const Drones = () => {
           }`}
         >
           Matrice 4T
-          <p className="text-center text-3xl text-black">Coming March 15</p>
         </h2>
         <main
           className={`${
