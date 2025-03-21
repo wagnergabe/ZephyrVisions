@@ -15,7 +15,8 @@ const About = () => {
             <ul className="text-2xl mt-6 text-logo-blue">
               <li>FAA Part 107 Certified Remote Pilot</li>
               <li>Fully insured with $1 million in liability coverage</li>
-            </ul>
+              <li>Expereienced in securing FAA operational waivers and LAANC airspace authorizations</li>
+              </ul>
           </div>
         </div>
       </div>
