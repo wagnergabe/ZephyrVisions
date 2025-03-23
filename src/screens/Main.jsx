@@ -9,6 +9,8 @@ import Banner from "../components/Banner.jsx";
 import ImageSlider from "../components/ImageSlider.jsx";
 
 import vid from "../assets/home_vid.mp4";
+import three_dee from "../assets/3d.mp4";
+import park from '../assets/baseball.jpg';
 import avata from "../assets/avata.webp";
 import frontImg from "../assets/thermal_front.png";
 import backImg from "../assets/thermal_back.png";
@@ -82,7 +84,7 @@ const Main = () => {
         {/* 🔥 Thermal Imaging Section */}
         <div className="flex flex-col items-center justify-center w-full bg-black text-white p-6 my-16">
           <h1 className="text-3xl font-bold mb-4 text-center">
-            Thermal Imaging with the DJI Matrice 4T
+            Thermal Imaging 
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl text-center mb-6">
             The <span className="font-semibold">DJI Matrice 4T</span> is equipped with high-resolution thermal sensors, allowing you to detect heat signatures, identify structural weaknesses, and enhance situational awareness in low-light or obscured conditions.
@@ -103,6 +105,39 @@ const Main = () => {
             </ul>
           </div>
         </div>
+
+        {/*3d Model Section */}
+        {/* 🗺️ 3D Mapping Section */}
+<section className="w-full bg-white py-16 px-6 flex flex-col items-center">
+  <h2 className="text-5xl font-bold text-[#07C0EA] text-center mb-4">3D Mapping & Graphics</h2>
+  <p className="text-lg text-gray-600 max-w-3xl text-center mb-10">
+    Capture environments in rich 3D detail — perfect for construction, inspections, land surveys, and marketing visuals. Present your projects like never before.
+  </p>
+
+  <div className="w-full max-w-6xl grid md:grid-cols-2 gap-8 items-center">
+    {/* Image Container */}
+    <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
+      <img
+        src={park}
+        alt="3D Map Preview"
+        className="object-cover w-full h-full"
+      />
+    </div>
+
+    {/* Video Container */}
+    <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
+      <video
+        className="object-cover w-full h-full"
+        src={three_dee}
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+    </div>
+  </div>
+</section>
+
 
         <Banner />
 

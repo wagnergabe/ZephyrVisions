@@ -4,12 +4,12 @@ export default function EventCoverage() {
         {
           title: "Music Festivals & Concerts",
           description: "Capture electrifying performances, massive crowds, and stunning lighting effects from a unique aerial perspective.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/cc5219fe-af23-4361-b38d-fc56503abdc8/Leonardo_Vision_XL_electric_music_festival_overhead_drone_0.jpg"
+          img: "https://as1.ftcdn.net/v2/jpg/02/14/78/42/1000_F_214784289_bUpjlJAgkY3SprW8GHjoD3l1eIlVqs6I.jpg"
         },
         {
           title: "Sports Events & Competitions",
           description: "Follow high-speed action, track races, and showcase venues with dynamic aerial views.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/c7e47ac4-02f2-478b-a637-40443fc1a16c/Leonardo_Kino_XL_track_and_field_stadium_1.jpg"
+          img: "https://t4.ftcdn.net/jpg/05/07/12/15/240_F_507121518_Dbl91HVy81yWsgto3YXKHASFSM58KdjA.jpg"
         },
         {
           title: "Weddings & Special Occasions",
@@ -19,17 +19,17 @@ export default function EventCoverage() {
         {
           title: "Corporate Events & Trade Shows",
           description: "Showcase large-scale networking events, product launches, and VIP experiences from above.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/48cfd678-a256-419a-92f9-25633beea821/Leonardo_Kino_XL_trade_show_event_from_a_drones_persective_1.jpg"
+          img: "https://t4.ftcdn.net/jpg/07/41/27/65/240_F_741276556_eOnAhHdOzxMtqtlV3ckEU3qFZe6rI9ii.jpg"
         },
         {
           title: "Festivals & Community Gatherings",
           description: "Highlight parades, carnivals, and local events with immersive aerial footage.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/549762fc-9451-4e9d-8464-f285e3a67eb2/Leonardo_Kino_XL_parade_from_a_drones_perspective_simple_few_p_0.jpg"
+          img: "https://as1.ftcdn.net/v2/jpg/00/74/38/00/1000_F_74380077_rac2NV8zZIG8grocmGfRFavszWLWo7mW.jpg"
         },
         {
           title: "Race Events",
           description: "Live following of high-speed races.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/bf15c2a5-e296-405e-a8f2-c961bbad94cb/Leonardo_Kino_XL_motorcross_car_race_2.jpg"
+          img: "https://as1.ftcdn.net/v2/jpg/05/42/63/38/1000_F_542633839_Li4NYzsRiEGX1dpFnb6O5bfghmf8BheA.jpg"
         },
         {
           title: "Real Estate & Commercial Openings",
@@ -66,7 +66,7 @@ export default function EventCoverage() {
 
         {/* CTA Button */}
         <div className="mt-10 text-center">
-          <button className="bg-[#07C0EA] hover:bg-[#05a6d8] text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg">
+          <button Link to="./contact" className="bg-[#07C0EA] hover:bg-[#05a6d8] text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg">
             Book Your Event Coverage
           </button>
         </div>
