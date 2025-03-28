@@ -13,6 +13,7 @@ import Videography from './screens/Videography';
 import Infared from './screens/Infared';
 import Roof from './screens/Roof';
 import Event from './screens/Event';
+import Mapping from './screens/Mapping'
 
 
 
@@ -33,6 +34,7 @@ function App() {
   <Route path='/services/infared' element={<Infared />}></Route>
   <Route path='/services/inspections' element={<Roof />}></Route>
   <Route path='/services/events' element={<Event />}></Route>
+  <Route path='/services/mapping' element={<Mapping />}></Route>
   
 
  </Routes>

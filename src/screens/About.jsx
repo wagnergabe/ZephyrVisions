@@ -12,11 +12,14 @@ const About = () => {
             <p className="text-lg leading-relaxed mt-4"> 
               I collaborate closely with each client, understanding their unique vision and objectives to create compelling aerial content that achieves their goals. My expertise in low-altitude filming and immersive fly-through videos ensures dynamic and engaging results. At Zephyr Visions, I'm passionate about aerial media and dedicated to exceeding your expectations with every project.
             </p>
-            <ul className="text-2xl mt-6 text-logo-blue">
-              <li>FAA Part 107 Certified Remote Pilot</li>
-              <li>Fully insured with $1 million in liability coverage</li>
-              <li>Expereienced in securing FAA operational waivers and LAANC airspace authorizations</li>
-              </ul>
+            <ul className="list-disc list-outside pl-5 text-lg mt-6 text-logo-blue">
+      
+
+  <li>FAA Part 107 Certified Remote Pilot</li>
+  <li>Fully insured with $1 million in liability coverage</li>
+  <li>Experienced in securing FAA operational waivers and LAANC airspace authorizations</li>
+</ul>
+
           </div>
         </div>
       </div>

@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import Banner from "../components/Banner.jsx";
 import ImageSlider from "../components/ImageSlider.jsx";
-
 import vid from "../assets/home_vid.mp4";
 import three_dee from "../assets/3d.mp4";
 import park from '../assets/baseball.jpg';
@@ -16,12 +15,14 @@ import frontImg from "../assets/thermal_front.png";
 import backImg from "../assets/thermal_back.png";
 import mspNight from "../assets/msp-night.jpg";
 
+
 const Main = () => {
   const useScrollToTop = () => {
     useEffect(() => {
       window.scrollTo(0, 0);
     }, []);
   };
+  
 
   return (
     <>
@@ -106,37 +107,53 @@ const Main = () => {
           </div>
         </div>
 
+
+
         {/*3d Model Section */}
-        {/* 🗺️ 3D Mapping Section */}
-<section className="w-full bg-white py-16 px-6 flex flex-col items-center">
-  <h2 className="text-5xl font-bold text-[#07C0EA] text-center mb-4">3D Mapping & Graphics</h2>
-  <p className="text-lg text-gray-600 max-w-3xl text-center mb-10">
+
+<section className="w-full bg-white py-20 px-6 flex flex-col items-center">
+  <h2 className="text-5xl font-bold text-[#07C0EA] text-center mb-6">3D Mapping & Graphics</h2>
+  <p className="text-lg text-gray-600 max-w-3xl text-center mb-12">
     Capture environments in rich 3D detail — perfect for construction, inspections, land surveys, and marketing visuals. Present your projects like never before.
   </p>
 
-  <div className="w-full max-w-6xl grid md:grid-cols-2 gap-8 items-center">
-    {/* Image Container */}
-    <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
-      <img
-        src={park}
-        alt="3D Map Preview"
-        className="object-cover w-full h-full"
-      />
+  <div className="w-full max-w-6xl grid md:grid-cols-2 gap-12 items-start">
+  
+    <div className="w-full flex flex-col items-center">
+      <span className="text-sm font-semibold text-white bg-[#07C0EA] px-4 py-1 rounded-t-md mb-3 shadow-md">
+        Taken Image
+      </span>
+      <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
+        <img
+          src={park}
+          alt="Real Aerial"
+          className="object-cover w-full h-full"
+        />
+      </div>
     </div>
 
-    {/* Video Container */}
-    <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
-      <video
-        className="object-cover w-full h-full"
-        src={three_dee}
-        autoPlay
-        loop
-        muted
-        playsInline
-      ></video>
+    <div className="w-full flex flex-col items-center">
+      <span className="text-sm font-semibold text-white bg-[#07C0EA] px-4 py-1 rounded-t-md mb-3 shadow-md">
+        3D Render
+      </span>
+      <div className="aspect-video w-full rounded-lg overflow-hidden shadow-xl border-4 border-[#07C0EA]">
+        <video
+          className="object-cover w-full h-full"
+          src={three_dee}
+          autoPlay
+          loop
+          muted
+          playsInline
+        ></video>
+      </div>
     </div>
   </div>
 </section>
+
+
+
+
+
 
 
         <Banner />
