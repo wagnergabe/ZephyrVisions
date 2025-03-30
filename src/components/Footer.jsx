@@ -21,7 +21,7 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex space-x-6 mb-6 lg:mb-0">
-          <a
+          {/* <a
             href="https://facebook.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -38,7 +38,7 @@ const Footer = () => {
             aria-label="Twitter"
           >
             <FaTwitter size={40} />
-          </a>
+          </a> */}
           <a
             href="https://www.instagram.com/zvdrones"
             target="_blank"
