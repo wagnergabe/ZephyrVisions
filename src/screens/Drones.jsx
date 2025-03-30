@@ -57,63 +57,68 @@ const Drones = () => {
 
         {/* Avata 2 Section */}
         <h2
-          className={`${
-            activeButton === "indoor"
-              ? "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
-              : "hidden"
-          }`}
-        >
-          Avata 2
-        </h2>
-        <main
-          className={`${
-            activeButton === "indoor"
-              ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
-              : ""
-          }`}
-        >
-          {activeButton === "indoor" && (
-            <>
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-                <div className="my-[20px] max-h-64">
-                  <p className="font-bold">Indoor Maneuverability</p>
-                  <p>
-                    Easily maneuver indoors and capture unique living spaces and rooms of your home.
-                  </p>
-                </div>
-                <div className="max-h-64">
-                  <p className="font-bold">Still Photography Mode</p>
-                  <p>
-                    Still photography is perfect for capturing aerial shots and custom home and property portraits.
-                  </p>
-                </div>
-              </aside>
+  className={`${
+    activeButton === "indoor"
+      ? "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
+      : "hidden"
+  }`}
+>
+  Avata 2 
+</h2>
 
-              <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
-                <img
-                  src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg"
-                  className="motion-scale-in-75"
-                  alt="Indoor drone"
-                />
-              </div>
+<main
+  className={`${
+    activeButton === "indoor"
+      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
+      : ""
+  }`}
+>
+  {activeButton === "indoor" && (
+    <>
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
+        <div className="my-[20px] max-h-64">
+          <p className="font-bold">Cinematic Indoor Flythroughs</p>
+          <p>
+            Navigate tight spaces with smooth, stabilized FPV control — perfect for
+            walkthroughs of homes, showrooms, and event venues.
+          </p>
+        </div>
+        <div className="max-h-64">
+          <p className="font-bold">Precision Hover & Acro Mode</p>
+          <p>
+            From slow, steady glides to advanced acro moves, tailor each flight to
+            fit your vision and environment.
+          </p>
+        </div>
+      </aside>
 
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-                <div className="my-[20px] max-h-64">
-                  <p className="font-bold">Focus Mode / Goggles</p>
-                  <p>
-                    Easily maneuver in and out of tight spaces with precision goggles and superior focus mode.
-                  </p>
-                </div>
-                <div className="max-h-64">
-                  <p className="font-bold">4K Stabilized Video</p>
-                  <p>
-                    Stabilized 4K video allows for precision videos with minimal movements.
-                  </p>
-                </div>
-              </aside>
-            </>
-          )}
-        </main>
+      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
+        <img
+          src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg"
+          className="motion-scale-in-75"
+          alt="Indoor drone Avata 2"
+        />
+      </div>
+
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
+        <div className="my-[20px] max-h-64">
+          <p className="font-bold">Immersive Goggles & Focus Mode</p>
+          <p>
+            Using FPV goggles and pinpoint camera
+            control to capture every angle indoors.
+          </p>
+        </div>
+        <div className="max-h-64">
+          <p className="font-bold">4K Ultra-Stabilized Video</p>
+          <p>
+            Crystal-clear 4K footage with built-in stabilization — ideal for
+            marketing, real estate, or branded content.
+          </p>
+        </div>
+      </aside>
+    </>
+  )}
+</main>
 
         {/* Mini 4 Pro Section */}
         <h2

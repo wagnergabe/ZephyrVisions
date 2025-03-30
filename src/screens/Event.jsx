@@ -9,7 +9,7 @@ export default function EventCoverage() {
         {
           title: "Sports Events & Competitions",
           description: "Follow high-speed action, track races, and showcase venues with dynamic aerial views.",
-          img: "https://t4.ftcdn.net/jpg/05/07/12/15/240_F_507121518_Dbl91HVy81yWsgto3YXKHASFSM58KdjA.jpg"
+          img: "https://images.pexels.com/photos/21175818/pexels-photo-21175818/free-photo-of-drone-shot-of-a-buggy-gokart-parked-next-to-tires-on-a-track.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         },
         {
           title: "Weddings & Special Occasions",
@@ -24,12 +24,12 @@ export default function EventCoverage() {
         {
           title: "Festivals & Community Gatherings",
           description: "Highlight parades, carnivals, and local events with immersive aerial footage.",
-          img: "https://as1.ftcdn.net/v2/jpg/00/74/38/00/1000_F_74380077_rac2NV8zZIG8grocmGfRFavszWLWo7mW.jpg"
+          img: "https://images.pexels.com/photos/12685181/pexels-photo-12685181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         },
         {
           title: "Race Events",
-          description: "Live following of high-speed races.",
-          img: "https://as1.ftcdn.net/v2/jpg/05/42/63/38/1000_F_542633839_Li4NYzsRiEGX1dpFnb6O5bfghmf8BheA.jpg"
+          description: "Live following of high-speed races. Including FPV capture for cinematic engagement",
+          img: "https://images.pexels.com/photos/30063481/pexels-photo-30063481/free-photo-of-aerial-view-of-marathon-event-in-sao-paulo-tunnel.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         },
         {
           title: "Real Estate & Commercial Openings",
@@ -37,9 +37,9 @@ export default function EventCoverage() {
           img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/0374faba-098f-4170-b957-911f88bacf6d/Leonardo_Kino_XL_new_business_opening_from_above_3.jpg"
         },
         {
-          title: "🎓 School & University Events",
+          title: "School & University Events",
           description: "Celebrate graduations, sports rallies, and campus-wide events with breathtaking drone shots.",
-          img: "https://cdn.leonardo.ai/users/1981000c-41ac-4b45-b469-2ae91e6b7135/generations/10ac7c1f-e329-4a97-9b69-f1b3c1632d8b/Leonardo_Kino_XL_school_graduation_event_1.jpg"
+          img: "https://images.pexels.com/photos/1046537/pexels-photo-1046537.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         },
 
       ];
@@ -64,12 +64,7 @@ export default function EventCoverage() {
           ))}
         </div>
 
-        {/* CTA Button */}
-        <div className="mt-10 text-center">
-          <button Link to="./contact" className="bg-[#07C0EA] hover:bg-[#05a6d8] text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-lg">
-            Book Your Event Coverage
-          </button>
-        </div>
+ 
       </div>
     </section>
   );
