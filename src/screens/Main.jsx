@@ -16,6 +16,13 @@ import backImg from "../assets/thermal_back.png";
 import mspNight from "../assets/msp-night.jpg";
 
 
+
+import { MdThermostat, MdMap } from "react-icons/md";
+import { RiFlightTakeoffLine } from "react-icons/ri";
+import { BsFillCameraVideoFill } from "react-icons/bs";
+import { MdHouse } from "react-icons/md";
+
+
 const Main = () => {
   const useScrollToTop = () => {
     useEffect(() => {
@@ -30,7 +37,7 @@ const Main = () => {
 
       <main className="flex flex-col items-center w-full h-full justify-center">
 
-        {/* 🎥 Background Video */}
+        
         <video
           className="w-full h-[50vh] lg:h-[70vh] object-cover shadow-2xl border-8 border-y-[#07C0EA]"
           src={vid}
@@ -40,49 +47,84 @@ const Main = () => {
           playsInline
         ></video>
 
-        {/* 🏢 Services Section */}
-        <section className="lg:w-[75%] mt-16 px-6">
-          <h2 className="text-5xl text-center text-[#07C0EA] font-bold">Services</h2>
+<section className="lg:w-[75%] mt-16 px-6">
+  <h2 className="text-5xl text-center text-[#07C0EA] font-bold">Services</h2>
 
-          <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 my-16 mx-3 text-center">
-            <li className="flex flex-col items-center">
-              <FaRegBuilding size={80} className="text-[#07C0EA]" />
-              <h3 className="font-bold text-xl mt-3">Commercial Real Estate Aerial Photography & Videography</h3>
-            </li>
-            <li className="flex flex-col items-center">
-              <AiFillPicture size={80} className="text-[#07C0EA]" />
-              <h3 className="font-bold text-xl mt-3">Aerial Photography / Videography</h3>
-            </li>
-            <li className="flex flex-col items-center">
-              <FaHardHat size={80} className="text-[#07C0EA]" />
-              <h3 className="font-bold text-xl mt-3">Architecture / Engineering / Construction</h3>
-            </li>
-          </ul>
-        </section>
+  <ul className="flex flex-wrap justify-center gap-10 my-16 mx-3 text-center">
+    <li className="flex flex-col items-center max-w-xs">
+      <FaRegBuilding size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Commercial & Residential Real Estate</h3>
+      <p className="text-sm mt-2">Artistic aerial photography and videos for property listings, brochures, and marketing.</p>
+    </li>
 
-        {/* 🛸 Drone Feature Section */}
-        <div 
-          className="w-full h-96 flex flex-col lg:flex-row items-center justify-center bg-cover bg-center py-12 rounded-xl shadow-lg text-white"
-          style={{ backgroundImage: `url(${mspNight})` }}
-        >
-          <div className="m-auto">
-            <img
-              src={avata}
-              className="w-[250px] h-[40vh] animate-float hover:scale-110 transition-transform duration-300 ease-in-out"
-              alt="Drone"
-            />
-          </div>
+    <li className="flex flex-col items-center max-w-xs">
+      <AiFillPicture size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Aerial Photography / Videography</h3>
+      <p className="text-sm mt-2">High-resolution imagery and cinematic video for any purpose.</p>
+    </li>
 
-          <div className="m-auto">
-            <Link to="/drones">
-              <button className="relative bg-neutral-800 text-white text-lg font-bold px-6 py-3 rounded-lg border hover:border-[#07C0EA] transition duration-300">
-                See the Drones
-              </button>
-            </Link>
-          </div>
-        </div>
+    <li className="flex flex-col items-center max-w-xs">
+      <FaHardHat size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Construction / Engineering</h3>
+      <p className="text-sm mt-2">Progress tracking, documentation, and aerial perspectives for job sites.</p>
+    </li>
 
-        {/* 🔥 Thermal Imaging Section */}
+    <li className="flex flex-col items-center max-w-xs">
+      <MdThermostat size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Thermal Imaging</h3>
+      <p className="text-sm mt-2">Infrared inspections for roofs, solar panels, and infrastructure anomalies.</p>
+    </li>
+
+    <li className="flex flex-col items-center max-w-xs">
+      <MdMap size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Mapping & 3D Modeling</h3>
+      <p className="text-sm mt-2">Orthomosaics, terrain models, and interactive site visualization.</p>
+    </li>
+
+    <li className="flex flex-col items-center max-w-xs">
+      <RiFlightTakeoffLine size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Indoor FPV Flythroughs</h3>
+      <p className="text-sm mt-2">Immersive indoor videos for businesses, showrooms, and warehouses.</p>
+    </li>
+
+    <li className="flex flex-col items-center max-w-xs">
+      <BsFillCameraVideoFill size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Event Coverage</h3>
+      <p className="text-sm mt-2">Capture outdoor events from the sky with dynamic aerial shots.</p>
+    </li>
+
+    <li className="flex flex-col items-center max-w-xs">
+      <MdHouse size={80} className="text-[#07C0EA]" />
+      <h3 className="font-bold text-xl mt-3">Roof & Infrastructure Inspections</h3>
+      <p className="text-sm mt-2">Close-up aerial inspections for assessments and maintenance planning.</p>
+    </li>
+  </ul>
+</section>
+
+
+
+<div 
+  className="w-full flex flex-col lg:flex-row items-center justify-center bg-cover bg-center py-12 rounded-xl shadow-lg text-white h-auto min-h-[24rem]"
+  style={{ backgroundImage: `url(${mspNight})` }}
+>
+  <div className="flex justify-center lg:justify-end w-full max-w-sm px-6">
+    <img
+      src={avata}
+      className="w-full max-w-[250px] h-auto animate-float hover:scale-105 transition-transform duration-300 ease-in-out"
+      alt="Drone"
+    />
+  </div>
+
+  <div className="flex justify-center lg:justify-start w-full max-w-sm px-6 mt-8 lg:mt-0">
+    <Link to="/drones">
+      <button className="relative bg-neutral-800 text-white text-lg font-bold px-6 py-3 rounded-lg border hover:border-[#07C0EA] transition duration-300">
+        See the Drones
+      </button>
+    </Link>
+  </div>
+</div>
+
+
         <div className="flex flex-col items-center justify-center w-full bg-black text-white p-6 my-16">
           <h1 className="text-3xl font-bold mb-4 text-center">
             Thermal Imaging 
@@ -98,11 +140,11 @@ const Main = () => {
           <div className="mt-8 max-w-4xl text-center">
             <h2 className="text-2xl font-semibold mb-3">Key Thermal Capabilities:</h2>
             <ul className="text-gray-300 space-y-2 text-left">
-              <li>🔥 <span className="font-semibold">Heat Signature Detection</span> – Identify hotspots in buildings, electrical grids, and vehicles.</li>
-              <li>🔍 <span className="font-semibold">Structural Inspections</span> – Detect water leaks, insulation gaps, and energy loss.</li>
-              <li>🚑 <span className="font-semibold">Search & Rescue</span> – Locate missing persons in low-visibility conditions.</li>
-              <li>🏗️ <span className="font-semibold">Construction & Infrastructure Monitoring</span> – Analyze material stress points and overheating.</li>
-              <li>🚜 <span className="font-semibold">Agriculture & Wildlife Management</span> – Monitor crop health, irrigation, and livestock body temperatures.</li>
+              <li><span className="font-semibold">Heat Signature Detection</span> – Identify hotspots in buildings, electrical grids, and vehicles.</li>
+              <li><span className="font-semibold">Structural Inspections</span> – Detect water leaks, insulation gaps, and energy loss.</li>
+              <li><span className="font-semibold">Search & Rescue</span> – Locate missing persons in low-visibility conditions.</li>
+              <li><span className="font-semibold">Construction & Infrastructure Monitoring</span> – Analyze material stress points and overheating.</li>
+              <li><span className="font-semibold">Agriculture & Wildlife Management</span> – Monitor crop health, irrigation, and livestock body temperatures.</li>
             </ul>
           </div>
         </div>

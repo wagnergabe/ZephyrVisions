@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import front from '../assets/winter_front.jpg'
 import above from '../assets/summer_above.jpg'
 import summer_front from '../assets/summer_front.jpg'
-
+import duran from '../assets/duran.png'
 
 export default function Photography() {
   return (
@@ -39,7 +39,7 @@ export default function Photography() {
 
       {/* Sample Images (Replace with actual property images later) */}
       <section className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <img className="rounded-lg shadow-lg bg-auto w-auto h-full" src={above} alt="Aerial view of property" />
+        <img className="rounded-lg shadow-lg bg-auto w-auto h-full" src={duran} alt="Aerial view of property" />
         <img className="rounded-lg shadow-lg w-full h-full" src={front} alt="Front view of property" />
         <img className="rounded-lg shadow-lg" src= {summer_front} alt="Cinematic drone shot" />
       </section>
