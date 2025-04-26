@@ -16,6 +16,7 @@ const About = () => {
       
 
   <li>FAA Part 107 Certified Remote Pilot</li>
+  <li>Certified Category B (UAV Aerial Applicator)</li>
   <li>Fully insured with $1 million in liability coverage</li>
   <li>Experienced in securing FAA operational waivers and LAANC airspace authorizations</li>
 </ul>
