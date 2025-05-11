@@ -61,6 +61,11 @@ const Gallery = () => {
               videoUrl="https://www.youtube.com/watch?v=PGh04Wp5Crg"
               thumbnailUrl="http://i3.ytimg.com/vi/PGh04Wp5Crg/hqdefault.jpg"
             />
+                <VideoCard
+            title="Spring Drone Cinematography in Duluth, MN"
+            videoUrl="https://www.youtube.com/watch?v=RyxSgmNYPlI"
+            thumbnailUrl="https://img.youtube.com/vi/RyxSgmNYPlI/maxresdefault.jpg"
+          />
           </div>
         </div>
       </div>
