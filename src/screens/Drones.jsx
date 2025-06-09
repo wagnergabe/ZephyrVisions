@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const Drones = () => {
-  const [activeButton, setActiveButton] = useState("indoor");
+  const [activeButton, setActiveButton] = useState("mavic4pro");
 
   const useScrollToTop = () => {
     useEffect(() => {
@@ -14,6 +14,16 @@ const Drones = () => {
       {useScrollToTop()}
       <section className="flex flex-col items-center justify-center md:justify-between w-[80%] h-auto mx-auto mt-5 font-poppins">
         <div className="flex flex-col justify-around my-3 md:flex-row">
+
+              <button
+  className={`my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
+    activeButton === "mavic4pro" ? "py-2 px-4 bg-gray-300 border rounded" : ""
+  }`}
+  onClick={() => setActiveButton("mavic4pro")}
+  disabled={activeButton === "mavic4pro"}
+>
+  FLAGSHIP
+</button>
           <button
             className={`font-bold md:border-b-4 my-2 mx-10 border-black lg:text-2xl ${
               activeButton === "indoor" ? "py-2 px-4 bg-gray-300 border rounded" : ""
@@ -53,6 +63,7 @@ const Drones = () => {
           >
             INDUSTRIAL
           </button>
+      
         </div>
 
         {/* Avata 2 Section */}
@@ -299,6 +310,68 @@ const Drones = () => {
             </>
           )}
         </main>
+
+        {/* Mavic 4 Pro Section */}
+<h2
+  className={`${
+    activeButton === "mavic4pro"
+      ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
+      : "hidden"
+  }`}
+>
+  Mavic 4 Pro
+</h2>
+
+<main
+  className={`${
+    activeButton === "mavic4pro"
+      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
+      : ""
+  }`}
+>
+  {activeButton === "mavic4pro" && (
+    <>
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
+        <div className="my-[20px]">
+          <p className="font-bold">100MP Super Resolution</p>
+          <p>
+            Industry-leading clarity for mapping, real estate, and commercial-grade photography.
+          </p>
+        </div>
+        <div>
+          <p className="font-bold">Dual Native ISO & Hasselblad Color</p>
+          <p>
+            Ultra-dynamic range and cinematic tones even in low light conditions.
+          </p>
+        </div>
+      </aside>
+
+      <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
+        <img
+          src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0ca84df1c0d68677e852ce314c9602d6@ultra.webp"
+          className="motion-scale-in-75"
+          alt="Mavic 4 Pro"
+        />
+      </div>
+
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
+        <div className="my-[20px]">
+          <p className="font-bold">Flagship-Level Precision</p>
+          <p>
+            Engineered for demanding aerial projects, from cinematic shoots to detailed inspections.
+          </p>
+        </div>
+        <div>
+          <p className="font-bold">360° Gimbal Rotation</p>
+          <p>
+            Freely rotate the camera in any direction without shifting the drone’s position.
+          </p>
+        </div>
+      </aside>
+    </>
+  )}
+</main>
+
       </section>
     </>
   );
