@@ -39,7 +39,8 @@ const Main = () => {
 <div className="w-full sm:h-[50vh] md:h-[70vh] overflow-hidden">
   <video
     className="w-full h-full object-cover"
-    src="https://d1yamy9p16k6i5.cloudfront.net/home_vid(1).mp4"
+    src="https://d1yamy9p16k6i5.cloudfront.net/home_vid%281%29.mp4"
+
     autoPlay
     loop
     muted
