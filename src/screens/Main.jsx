@@ -36,16 +36,17 @@ const Main = () => {
 
       <main className="flex flex-col items-center w-full h-full justify-center">
 {/* see if this works */}
-<div className="w-full h-[50vh] overflow-hidden">
+<div className="w-full sm:h-[50vh] md:h-[70vh] overflow-hidden">
   <video
     className="w-full h-full object-cover"
-    src={vid}
+    src="https://d1yamy9p16k6i5.cloudfront.net/home_vid(1).mp4"
     autoPlay
     loop
     muted
     playsInline
   />
 </div>
+
 
 
 
