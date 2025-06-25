@@ -35,23 +35,16 @@ const Main = () => {
       {useScrollToTop()}
 
       <main className="flex flex-col items-center w-full h-full justify-center">
-{/* see if this works */}
-<div className="w-full sm:h-[50vh] md:h-[70vh] overflow-hidden">
+<div className="w-full h-[40vh] sm:h-[50vh] md:h-[70vh] overflow-hidden">
   <video
     className="w-full h-full object-cover"
     src="https://d1yamy9p16k6i5.cloudfront.net/home_vid%281%29.mp4"
-
     autoPlay
     loop
     muted
     playsInline
   />
 </div>
-
-
-
-
-
 
         <section className="w-full bg-neutral-900 text-white text-center py-10 px-6 shadow-2xl">
   <h2 className="text-4xl md:text-5xl font-bold text-[#07C0EA] mb-4">
