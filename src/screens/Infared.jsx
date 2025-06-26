@@ -5,7 +5,7 @@ const Infared = () => {
     <section className="bg-gray-100 py-12 px-4">
       <div className="container mx-auto flex flex-col items-center">
         {/* Main Title */}
-        <h1 className="text-4xl font-bold mb-8 text-center text-blue-600">
+        <h1 className="text-4xl font-bold mb-8 text-center text-logo-blue">
           Real-Time Thermal Imaging Services
         </h1>
 
@@ -45,7 +45,7 @@ const Infared = () => {
 
     
         <div className="mt-12 w-full">
-          <h2 className="text-3xl font-bold mb-6 text-center text-blue-500">
+          <h2 className="text-3xl font-bold mb-6 text-center text-logo-blue">
              Capabilities
           </h2>
           <div className="flex flex-col md:flex-row gap-6">

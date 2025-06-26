@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import front from '../assets/land_front.jpg'
-import above from '../assets/summer_above.jpg'
-import summer_front from '../assets/summer_front.png'
-import duran from '../assets/duran.png'
+import front from '../assets/land_front.jpg';
+import above from '../assets/summer_above.jpg';
+import summer_front from '../assets/summer_front.png';
+import duran from '../assets/duran.png';
 
 export default function Photography() {
   return (
@@ -37,23 +37,24 @@ export default function Photography() {
         </ul>
       </section>
 
-      {/* Sample Images (Replace with actual property images later) */}
-      <section className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <img className="rounded-lg shadow-lg bg-auto w-auto h-full" src={duran} alt="Aerial view of property" />
-        <img className="rounded-lg shadow-lg w-full h-full" src={front} alt="Front view of property" />
-        <img className="rounded-lg shadow-lg" src= {summer_front} alt="Cinematic drone shot" />
+      {/* Sample Images */}
+      <section className="mt-8 flex flex-wrap justify-center gap-4">
+        {[duran, front, summer_front].map((img, idx) => (
+          <img
+            key={idx}
+            src={img}
+            alt={`Sample ${idx + 1}`}
+            className="rounded-lg shadow-lg w-[300px] h-[200px] object-cover"
+          />
+        ))}
       </section>
 
-      {/* Call to Action */}
+      
       <section className="mt-10 text-center">
-      <h2 className="text-3xl font-bold text-gray-800">Enhance Your Listings with Aerial Photography!</h2>
-<p className="text-gray-700 mt-2">Reach out to schedule a professional real estate drone photography session.</p>
-
-        <Link to="/contact">
-          <button className="mt-4 bg-[#07C0EA] text-white px-6 py-3 rounded-lg hover:bg-[#055C80] transition">
-            Contact 
-          </button>
-        </Link>
+        <h2 className="text-3xl font-bold text-logo-blue">Enhance Your Listings with Aerial Photography!</h2>
+        <p className="text-gray-700 mt-2">
+          Reach out to schedule a professional real estate drone photography session.
+        </p>
       </section>
     </div>
   );

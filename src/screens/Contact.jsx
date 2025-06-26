@@ -35,7 +35,7 @@ const Contact = () => {
     <div class="my-6 w-full h-full">
       <div class="grid sm:grid-cols-2 items-start gap-12 p-8 mx-auto max-w-4xl bg-white shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md font-[sans-serif]">
         <div>
-          <h1 class="text-gray-800 text-3xl font-bold">Ready to Fly?</h1>
+          <h1 class="text-logo-blue text-3xl font-bold">Ready to Fly?</h1>
           <p class="text-sm text-gray-500 mt-4">Have a project or unique vision that could benefit from aerial imagery? Feel free to reach out and I'll provide you with information you how drone services can help bring them to life.</p>
           <p class='text-sm text-gray-500 mt-4'>Also really helps to include the location of your project!</p>
 
@@ -107,7 +107,7 @@ const Contact = () => {
           <textarea placeholder='Message' rows="6" name='message'
             class="w-full text-gray-800 rounded-md px-4 border text-sm pt-2.5 outline-none focus:border-blue-500"></textarea>
           <button type='submit'
-            class="text-white bg-blue-500 hover:bg-blue-600 rounded-md text-sm px-4 py-2.5 w-full !mt-6">Send</button>
+            class="text-white bg-logo-blue hover:bg-blue-600 rounded-md text-sm px-4 py-2.5 w-full !mt-6">Send</button>
         </form>
       </div>
     </div>
