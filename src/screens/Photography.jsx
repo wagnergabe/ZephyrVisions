@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import front from '../assets/winter_front.jpg'
+import front from '../assets/land_front.jpg'
 import above from '../assets/summer_above.jpg'
-import summer_front from '../assets/summer_front.jpg'
+import summer_front from '../assets/summer_front.png'
 import duran from '../assets/duran.png'
 
 export default function Photography() {
