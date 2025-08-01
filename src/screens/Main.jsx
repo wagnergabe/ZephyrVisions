@@ -88,10 +88,12 @@ const Main = () => {
     </li>
 
     <li className="flex flex-col items-center max-w-xs">
-      <MdThermostat size={80} className="text-[#07C0EA]" />
-      <h3 className="font-bold text-xl mt-3">Thermal Imaging</h3>
-      <p className="text-sm mt-2">Infrared inspections for roofs, solar panels, and infrastructure anomalies.</p>
-    </li>
+  <MdThermostat size={80} className="text-[#07C0EA]" />
+  <h3 className="font-bold text-xl mt-3">Thermal Imaging</h3>
+  <p className="text-sm mt-2">
+    FLIR Level 1 sUAS Certified Thermographer offering infrared inspections for roofs, solar panels, and infrastructure anomalies.
+  </p>
+</li>
 
     <li className="flex flex-col items-center max-w-xs">
       <MdMap size={80} className="text-[#07C0EA]" />
@@ -144,27 +146,28 @@ const Main = () => {
 
 
         <div className="flex flex-col items-center justify-center w-full bg-black text-white p-6 my-16">
-          <h1 className="text-3xl font-bold mb-4 text-center">
-            Thermal Imaging 
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl text-center mb-6">
-            The <span className="font-semibold">DJI Matrice 4T</span> is equipped with high-resolution thermal sensors, allowing you to detect heat signatures, identify structural weaknesses, and enhance situational awareness in low-light or obscured conditions.
-          </p>
+         <h1 className="text-3xl font-bold mb-4 text-center">
+  Thermal Imaging 
+</h1>
+<p className="text-lg text-gray-300 max-w-3xl text-center mb-6">
+  As a <span className="font-semibold">Certified Thermographer</span> through FLIR, providing advanced aerial infrared imaging to detect heat signatures, locate anomalies, and deliver actionable insights in low-visibility or complex environments.
+</p>
 
-          <div className="relative flex justify-center items-center w-full max-w-4xl bg-gray-800 p-4 rounded-lg shadow-lg">
-            <ImageSlider imageFront={frontImg} imageBack={backImg} />
-          </div>
+<div className="relative flex justify-center items-center w-full max-w-4xl bg-gray-800 p-4 rounded-lg shadow-lg">
+  <ImageSlider imageFront={frontImg} imageBack={backImg} />
+</div>
 
-          <div className="mt-8 max-w-4xl text-center">
-            <h2 className="text-2xl font-semibold mb-3">Key Thermal Capabilities:</h2>
-            <ul className="text-gray-300 space-y-2 text-left">
-              <li><span className="font-semibold">Heat Signature Detection</span> – Identify hotspots in buildings, electrical grids, and vehicles.</li>
-              <li><span className="font-semibold">Structural Inspections</span> – Detect water leaks, insulation gaps, and energy loss.</li>
-              <li><span className="font-semibold">Search & Rescue</span> – Locate missing persons in low-visibility conditions.</li>
-              <li><span className="font-semibold">Construction & Infrastructure Monitoring</span> – Analyze material stress points and overheating.</li>
-              <li><span className="font-semibold">Agriculture & Wildlife Management</span> – Monitor crop health, irrigation, and livestock body temperatures.</li>
-            </ul>
-          </div>
+<div className="mt-8 max-w-4xl text-center">
+  <h2 className="text-2xl font-semibold mb-3">Key Thermal Capabilities:</h2>
+  <ul className="text-gray-300 space-y-2 text-left">
+    <li><span className="font-semibold">Heat Signature Detection</span> – Identify hotspots in buildings, electrical grids, and vehicles.</li>
+    <li><span className="font-semibold">Structural Inspections</span> – Detect water leaks, insulation gaps, and energy loss.</li>
+    <li><span className="font-semibold">Search & Rescue</span> – Locate missing persons in low-visibility conditions.</li>
+    <li><span className="font-semibold">Construction & Infrastructure Monitoring</span> – Analyze material stress points and overheating.</li>
+    <li><span className="font-semibold">Agriculture & Wildlife Management</span> – Monitor crop health, irrigation, and livestock body temperatures.</li>
+  </ul>
+</div>
+
         </div>
 
 

@@ -16,6 +16,7 @@ const About = () => {
       
 
   <li>FAA Part 107 Certified Remote Pilot</li>
+  <li>FLIR Certified Level I sUAS Thermographer</li>
   <li>Certified Category B (UAV Aerial Applicator)</li>
   <li>Fully insured with $1 million in liability coverage</li>
   <li>Authorized for select operations over non-participants under FAA waiver §107.39</li>
