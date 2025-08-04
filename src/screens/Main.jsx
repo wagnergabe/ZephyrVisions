@@ -150,7 +150,7 @@ const Main = () => {
   Thermal Imaging 
 </h1>
 <p className="text-lg text-gray-300 max-w-3xl text-center mb-6">
-  As a <span className="font-semibold">Certified Thermographer</span> through FLIR, providing advanced aerial infrared imaging to detect heat signatures, locate anomalies, and deliver actionable insights in low-visibility or complex environments.
+  <span className="font-semibold">Certified Thermographer</span> through FLIR, providing advanced aerial infrared imaging to detect heat signatures, locate anomalies, and deliver actionable insights in low-visibility or complex environments.
 </p>
 
 <div className="relative flex justify-center items-center w-full max-w-4xl bg-gray-800 p-4 rounded-lg shadow-lg">
