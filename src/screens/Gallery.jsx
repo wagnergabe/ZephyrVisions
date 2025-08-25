@@ -4,7 +4,7 @@ import newHope from '../assets/newhopesun.jpg'
 import downtown from '../assets/downtown.jpg';
 import birdsun from '../assets/birdsun.jpg';
 import park from '../assets/Park.jpg';
-import osprey from '../assets/Osprey.jpg'
+import osprey from '../assets/osprey.jpg'
 
 
 
