@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { PlayCircle, ChevronLeft, ChevronRight, X, Image as ImageIcon } from "lucide-react";
 import newHope from '../assets/newhopesun.jpg'
-import msp from '../assets/MSP.jpg'
 import downtown from '../assets/downtown.jpg';
 import birdsun from '../assets/birdsun.jpg';
 import park from '../assets/Park.jpg';
