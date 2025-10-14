@@ -63,22 +63,14 @@ const VideoCard = ({ title, videoUrl, thumbnailUrl }) => {
 const Lightbox = ({ images, initialIndex = 0, onClose }) => {
   const [index, setIndex] = useState(initialIndex);
 
-  const prev = useCallback(
-    () => setIndex((i) => (i - 1 + images.length) % images.length),
-    [images.length]
-  );
-  const next = useCallback(
-    () => setIndex((i) => (i + 1) % images.length),
-    [images.length]
-  );
-  const handleKey = useCallback(
-    (e) => {
-      if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    },
-    [next, onClose, prev]
-  );
+  const prev = useCallback(() => setIndex(i => (i - 1 + images.length) % images.length), [images.length]);
+  const next = useCallback(() => setIndex(i => (i + 1) % images.length), [images.length]);
+
+  const handleKey = useCallback((e) => {
+    if (e.key === "Escape") onClose();
+    if (e.key === "ArrowLeft") prev();
+    if (e.key === "ArrowRight") next();
+  }, [onClose, prev, next]);
 
   useEffect(() => {
     document.addEventListener("keydown", handleKey);
@@ -89,19 +81,22 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
 
   return (
     <div
-      className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm overflow-y-auto"
       onClick={onClose}
-      aria-modal="true"
       role="dialog"
+      aria-modal="true"
     >
       <div
-        className="absolute inset-4 md:inset-10 lg:inset-16 bg-black/20 rounded-xl"
+        className="relative mx-auto my-6 md:my-10 lg:my-16 max-w-6xl min-h-[60vh] rounded-xl bg-black/20"
         onClick={(e) => e.stopPropagation()}
       >
+        {/* close button ABOVE everything */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 p-2 rounded-full bg-white/20 hover:bg-white/30 text-white"
+          className="absolute top-3 right-3 z-50 p-2 rounded-full bg-black/60 hover:bg-black/70 text-white
+                     focus:outline-none focus:ring-2 focus:ring-white/70"
           aria-label="Close"
+          type="button"
         >
           <X className="w-5 h-5" />
         </button>
@@ -111,24 +106,29 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
             <img
               src={img.src}
               alt={img.alt || ""}
-              className="absolute inset-0 m-auto max-h-full max-w-full object-contain"
+              className="absolute inset-0 m-auto max-h-full max-w-full object-contain z-0"
             />
+
+            {/* nav buttons BELOW the close button */}
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white z-10"
               aria-label="Previous image"
+              type="button"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white z-10"
               aria-label="Next image"
+              type="button"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
           </div>
-          <div className="p-4 text-center text-white/90 text-sm">
+
+          <div className="p-4 text-center text-white/90 text-sm z-10">
             <p>{img.caption || img.alt}</p>
           </div>
         </div>
@@ -136,6 +136,7 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
     </div>
   );
 };
+
 
 
 const ImageCarousel = ({ images = [] }) => {
@@ -233,7 +234,7 @@ const Gallery = () => {
     {
       src: downtown,
       alt: "Minneapolis",
-      caption: "Above US Bank Stadium Minneapolis",
+      caption: "Foggy New Hope morning",
     },
     {
       src: birdsun,

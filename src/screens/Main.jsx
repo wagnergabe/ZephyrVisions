@@ -47,6 +47,31 @@ const Main = () => {
 </div>
 
         <section className="w-full bg-neutral-900 text-white text-center py-10 px-6 shadow-2xl">
+        {/* 🏆 Photo Contest Win Banner */}
+{/* 🏆 Photo Contest Announcement Banner */}
+<section className="relative w-full bg-gradient-to-r from-neutral-950 via-neutral-900 to-neutral-950 text-white text-center py-12 my-12 shadow-2xl overflow-hidden border-y border-[#07C0EA]/50">
+  <div className="animate-fade-in px-6">
+    <h2 className="text-3xl md:text-4xl font-extrabold tracking-wide mb-4 flex items-center justify-center gap-2">
+      <span role="img" aria-label="trophy">🏆</span>
+      <span className="text-[#07C0EA] drop-shadow-[0_0_8px_#07C0EA]">Award-Winning Photographer</span>
+    </h2>
+
+    <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      <span className="font-semibold text-white">Zephyr Visions</span> proudly earned the 
+      <span className="font-semibold text-[#07C0EA]"> People’s Choice Award</span> in the 
+      <span className="font-semibold text-[#07C0EA]"> New Hope “In Focus” Photo Contest</span> — 
+      recognized for outstanding creativity and aerial imagery.
+    </p>
+  </div>
+
+  {/* Subtle glowing background accent */}
+  <div className="absolute inset-0 opacity-20 pointer-events-none">
+    <div className="absolute w-64 h-64 bg-[#07C0EA] rounded-full blur-3xl top-0 left-1/4 animate-pulse-slow"></div>
+    <div className="absolute w-80 h-80 bg-cyan-400 rounded-full blur-3xl bottom-0 right-1/4 animate-pulse-slow"></div>
+  </div>
+</section>
+
+
   <h2 className="text-4xl md:text-5xl font-bold text-[#07C0EA] mb-4">
     Introducing the Mavic 4 Pro
   </h2>
