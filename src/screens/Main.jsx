@@ -70,7 +70,7 @@ const Main = () => {
 
               <video
                 className="w-full h-full"
-                src="https://zephyr-media.s3.us-east-1.amazonaws.com/ShowcaseRD2.mov"
+                src="https://zephyr-media.s3.us-east-1.amazonaws.com/final+again.mp4"
                 autoPlay
                 controls
                 playsInline
