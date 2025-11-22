@@ -1,12 +1,17 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { PlayCircle, ChevronLeft, ChevronRight, X, Image as ImageIcon } from "lucide-react";
-import newHope from '../assets/newhopesun.jpg'
-import downtown from '../assets/downtown.jpg';
-import birdsun from '../assets/birdsun.jpg';
-import park from '../assets/Park.jpg';
-import osprey from '../assets/osprey.jpg'
-
-
+import {
+  PlayCircle,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  Image as ImageIcon,
+} from "lucide-react";
+import newHope from "../assets/newhopesun.jpg";
+import downtown from "../assets/downtown.jpg";
+import birdsun from "../assets/birdsun.jpg";
+import park from "../assets/Park.jpg";
+import osprey from "../assets/osprey.jpg";
+import cody from '../assets/cody_home.png';
 
 const VideoCard = ({ title, videoUrl, thumbnailUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -59,18 +64,26 @@ const VideoCard = ({ title, videoUrl, thumbnailUrl }) => {
   );
 };
 
-
 const Lightbox = ({ images, initialIndex = 0, onClose }) => {
   const [index, setIndex] = useState(initialIndex);
 
-  const prev = useCallback(() => setIndex(i => (i - 1 + images.length) % images.length), [images.length]);
-  const next = useCallback(() => setIndex(i => (i + 1) % images.length), [images.length]);
+  const prev = useCallback(
+    () => setIndex((i) => (i - 1 + images.length) % images.length),
+    [images.length]
+  );
+  const next = useCallback(
+    () => setIndex((i) => (i + 1) % images.length),
+    [images.length]
+  );
 
-  const handleKey = useCallback((e) => {
-    if (e.key === "Escape") onClose();
-    if (e.key === "ArrowLeft") prev();
-    if (e.key === "ArrowRight") next();
-  }, [onClose, prev, next]);
+  const handleKey = useCallback(
+    (e) => {
+      if (e.key === "Escape") onClose();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    },
+    [onClose, prev, next]
+  );
 
   useEffect(() => {
     document.addEventListener("keydown", handleKey);
@@ -137,8 +150,6 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
   );
 };
 
-
-
 const ImageCarousel = ({ images = [] }) => {
   const [index, setIndex] = useState(0);
   const [lightbox, setLightbox] = useState({ open: false, startIndex: 0 });
@@ -199,7 +210,9 @@ const ImageCarousel = ({ images = [] }) => {
               onClick={() => setIndex(i)}
               aria-label={`Go to slide ${i + 1}`}
               className={`h-2.5 rounded-full transition-all ${
-                i === index ? "w-6 bg-logo-blue" : "w-2.5 bg-gray-300 hover:bg-gray-400"
+                i === index
+                  ? "w-6 bg-logo-blue"
+                  : "w-2.5 bg-gray-300 hover:bg-gray-400"
               }`}
             />
           ))}
@@ -217,9 +230,7 @@ const ImageCarousel = ({ images = [] }) => {
   );
 };
 
-
 const Gallery = () => {
-
   const carouselImages = [
     {
       src: newHope,
@@ -227,9 +238,9 @@ const Gallery = () => {
       caption: "Downtown overview at golden hour",
     },
     {
-      src: "https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=1600&auto=format&fit=crop",
-      alt: "Bridge inspection oblique",
-      caption: "From Above",
+      src: cody,
+      alt: "Real Estate picture of Cody, Wy home",
+      caption: "Mountain Real Estate",
     },
     {
       src: downtown,
@@ -246,7 +257,6 @@ const Gallery = () => {
       alt: "Park",
       caption: "Plymouth Pavillion Park",
     },
- 
   ];
 
   return (
@@ -284,6 +294,11 @@ const Gallery = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <VideoCard
+              title="Cinematic Winter Flyover – Newest Upload"
+              videoUrl="https://youtu.be/xKIpesDVI2Q?si=P7sadNl8BwHXI9IT"
+              thumbnailUrl="https://img.youtube.com/vi/xKIpesDVI2Q/maxresdefault.jpg"
+            />
+            <VideoCard
               title="Winter Drone Shots in New Hope, MN"
               videoUrl="https://youtu.be/hlzp04wIJVA"
               thumbnailUrl="https://img.youtube.com/vi/hlzp04wIJVA/maxresdefault.jpg"
@@ -302,7 +317,6 @@ const Gallery = () => {
         </section>
 
         {/* CTA */}
-      
       </main>
 
       <footer className="mt-6 mb-8 text-center text-xs text-gray-500">

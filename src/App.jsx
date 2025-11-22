@@ -15,6 +15,7 @@ import Roof from './screens/Roof';
 import Event from './screens/Event';
 import Mapping from './screens/Mapping'
 import Certs from './screens/Certs'
+import Policy from './screens/PrivacyPolicy';
 
 
 
@@ -37,6 +38,7 @@ function App() {
   <Route path='/services/events' element={<Event />}></Route>
   <Route path='/services/mapping' element={<Mapping />}></Route>
   <Route path='/certs' element={<Certs />}></Route>
+  <Route path ='/privacy' element={<Policy />}></Route>
   
 
  </Routes>
