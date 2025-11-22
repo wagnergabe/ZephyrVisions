@@ -33,12 +33,19 @@ function Nav() {
           </Link>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="p-2 m-5 text-white bg-[#07C0EA] hover:bg-black focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden" 
-            onClick={() => setMobileMenu(!mobileMenu)}
-          >
-            <RxHamburgerMenu size={25} />
-          </button>
+          {/* Mobile Menu Button */}
+<button
+  aria-label="Toggle navigation menu"
+  className="p-2 m-5 text-white bg-[#07C0EA] hover:bg-black focus:ring-2 focus:ring-gray-200 rounded-lg lg:hidden"
+  onClick={() => setMobileMenu(!mobileMenu)}
+>
+  <RxHamburgerMenu
+    size={25}
+    aria-hidden="true"
+    focusable="false"
+  />
+</button>
+
 
           {/* Menu Items */}
           <div className={`${!mobileMenu ? "" : 'hidden'} w-full lg:w-auto lg:block motion-preset-slide-down-sm`}>
