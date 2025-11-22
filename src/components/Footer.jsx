@@ -12,6 +12,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#2F3031] text-white py-12 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+
         {/* Logo */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left">
           <Link to="/" className="flex justify-center md:justify-start w-full">
@@ -23,8 +24,7 @@ const Footer = () => {
           </Link>
 
           <p className="text-sm text-gray-400 max-w-xs leading-relaxed">
-            Professional Drone Services · Photography · Mapping · Thermal
-            Imaging
+            Professional Drone Services · Photography · Mapping · Thermal Imaging
           </p>
         </div>
 
@@ -41,7 +41,7 @@ const Footer = () => {
               aria-label="Instagram"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
-              <FaInstagram size={32} />
+              <FaInstagram size={32} aria-hidden="true" focusable="false" />
             </a>
 
             <a
@@ -51,7 +51,7 @@ const Footer = () => {
               aria-label="YouTube"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
-              <FaYoutube size={32} />
+              <FaYoutube size={32} aria-hidden="true" focusable="false" />
             </a>
 
             <a
@@ -61,7 +61,7 @@ const Footer = () => {
               aria-label="LinkedIn"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
-              <FaLinkedin size={32} />
+              <FaLinkedin size={32} aria-hidden="true" focusable="false" />
             </a>
           </div>
         </div>
@@ -71,7 +71,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold tracking-wide mb-3">Contact</h3>
 
           <p className="flex items-center gap-2 mb-2">
-            <FaEnvelope className="text-[#07C0EA]" />
+            <FaEnvelope className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
             <a
               href="mailto:gabriel@zvdrones.com"
               className="hover:text-[#07C0EA] transition"
@@ -81,7 +81,7 @@ const Footer = () => {
           </p>
 
           <p className="flex items-center gap-2">
-            <FaPhone className="text-[#07C0EA]" />
+            <FaPhone className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
             <span>+1 (320) 237-1703</span>
           </p>
         </div>

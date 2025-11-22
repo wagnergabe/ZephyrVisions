@@ -43,7 +43,7 @@ const Main = () => {
             className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-gray-900
                        font-semibold px-5 py-2 rounded-full shadow-lg flex items-center gap-2 transition"
           >
-            <PlayCircle className="w-5 h-5" />
+            <PlayCircle className="w-5 h-5" aria-hidden="true" focusable="false" />
             Play Sampler Video (With Sound)
           </button>
         </div>
@@ -65,7 +65,7 @@ const Main = () => {
                 className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 hover:bg-black/70 text-white"
                 aria-label="Close"
               >
-                <X className="w-5 h-5" />
+                <X className="w-5 h-5" aria-hidden="true" focusable="false" />
               </button>
 
               <video
@@ -134,25 +134,25 @@ const Main = () => {
 
           <ul className="flex flex-wrap justify-center gap-10 my-16 mx-3 text-center">
             <li className="flex flex-col items-center max-w-xs">
-              <FaRegBuilding size={80} className="text-[#07C0EA]" />
+              <FaRegBuilding size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
               <h3 className="font-bold text-xl mt-3">Commercial & Residential Real Estate</h3>
               <p className="text-sm mt-2">Artistic aerial photography and videos for property listings, brochures, and marketing.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <AiFillPicture size={80} className="text-[#07C0EA]" />
+              <AiFillPicture size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false"/>
               <h3 className="font-bold text-xl mt-3">Aerial Photography / Videography</h3>
               <p className="text-sm mt-2">High-resolution imagery and cinematic video for any purpose.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <FaHardHat size={80} className="text-[#07C0EA]" />
+              <FaHardHat size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
               <h3 className="font-bold text-xl mt-3">Construction / Engineering</h3>
               <p className="text-sm mt-2">Progress tracking, documentation, and aerial perspectives for job sites.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <MdThermostat size={80} className="text-[#07C0EA]" />
+              <MdThermostat size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false"/>
               <h3 className="font-bold text-xl mt-3">Thermal Imaging</h3>
               <p className="text-sm mt-2">
                 FLIR Level 1 sUAS Certified Thermographer offering infrared inspections for roofs, solar panels, and infrastructure anomalies.
@@ -160,25 +160,25 @@ const Main = () => {
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <MdMap size={80} className="text-[#07C0EA]" />
+              <MdMap size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false"/>
               <h3 className="font-bold text-xl mt-3">Mapping & 3D Modeling</h3>
               <p className="text-sm mt-2">Orthomosaics, terrain models, and interactive site visualization.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <RiFlightTakeoffLine size={80} className="text-[#07C0EA]" />
+              <RiFlightTakeoffLine size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
               <h3 className="font-bold text-xl mt-3">Indoor FPV Flythroughs</h3>
               <p className="text-sm mt-2">Immersive indoor videos for businesses, showrooms, and warehouses.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <BsFillCameraVideoFill size={80} className="text-[#07C0EA]" />
+              <BsFillCameraVideoFill size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
               <h3 className="font-bold text-xl mt-3">Event Coverage</h3>
               <p className="text-sm mt-2">Capture outdoor events from the sky with dynamic aerial shots.</p>
             </li>
 
             <li className="flex flex-col items-center max-w-xs">
-              <MdHouse size={80} className="text-[#07C0EA]" />
+              <MdHouse size={80} className="text-[#07C0EA]" aria-hidden="true" focusable="false" />
               <h3 className="font-bold text-xl mt-3">Roof & Infrastructure Inspections</h3>
               <p className="text-sm mt-2">Close-up aerial inspections for assessments and maintenance planning.</p>
             </li>

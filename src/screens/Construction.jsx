@@ -2,19 +2,19 @@ import { Wrench, ClipboardList, Camera, HardHat, Shield, Map, Clock, FileText, R
 
 const features = [
   {
-    icon: <Wrench className="w-14 h-14 text-logo-blue mb-4" />,
+    icon: <Wrench className="w-14 h-14 text-logo-blue mb-4" aria-hidden="true" focusable="false"/>,
     title: "Equipment Tracking",
     description:
       "Monitor movement and usage of heavy equipment to reduce downtime and improve efficiency.",
   },
   {
-    icon: <ClipboardList className="w-14 h-14 text-logo-blue mb-4" />,
+    icon: <ClipboardList className="w-14 h-14 text-logo-blue mb-4" aria-hidden="true" focusable="false"/>,
     title: "Automated Progress Reports",
     description:
       "AI assisted summaries with key photos and notes so stakeholders get clear updates fast.",
   },
   {
-    icon: <Camera className="w-14 h-14 text-logo-blue mb-4" />,
+    icon: <Camera className="w-14 h-14 text-logo-blue mb-4"aria-hidden="true" focusable="false" />,
     title: "High Resolution Aerial Imaging",
     description:
       "Crisp overhead and oblique imagery for inspections, planning, and investor decks.",
@@ -26,25 +26,25 @@ const workflow = [
     step: "01",
     title: "Plan",
     desc: "We define the scope, safety plan, and capture schedule that fits your build cadence.",
-    icon: <Map className="w-6 h-6 text-logo-blue" />,
+    icon: <Map className="w-6 h-6 text-logo-blue" aria-hidden="true" focusable="false"/>,
   },
   {
     step: "02",
     title: "Capture",
     desc: "FAA Part 107 compliant flights with standard, oblique, and optional thermal passes.",
-    icon: <HardHat className="w-6 h-6 text-logo-blue" />,
+    icon: <HardHat className="w-6 h-6 text-logo-blue" aria-hidden="true" focusable="false" />,
   },
   {
     step: "03",
     title: "Process",
     desc: "Organized folders, filenames, and optional maps or 3D outputs for easy handoff.",
-    icon: <Ruler className="w-6 h-6 text-logo-blue" />,
+    icon: <Ruler className="w-6 h-6 text-logo-blue" aria-hidden="true" focusable="false" />,
   },
   {
     step: "04",
     title: "Deliver",
     desc: "Next day delivery for photo sets. Deeper analysis adds a short lead time based on scope.",
-    icon: <Clock className="w-6 h-6 text-logo-blue" />,
+    icon: <Clock className="w-6 h-6 text-logo-blue" aria-hidden="true" focusable="false"/>,
   },
 ];
 
@@ -79,15 +79,15 @@ export default function Construction() {
           {/* Quick stats */}
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="bg-white/70 backdrop-blur rounded-xl p-4 shadow flex items-center gap-3 justify-center">
-              <Shield className="w-5 h-5 text-logo-blue" />
+              <Shield className="w-5 h-5 text-logo-blue" aria-hidden="true" focusable="false"/>
               <p className="text-gray-700"><span className="font-semibold">FAA Part 107</span> compliant</p>
             </div>
             <div className="bg-white/70 backdrop-blur rounded-xl p-4 shadow flex items-center gap-3 justify-center">
-              <Clock className="w-5 h-5 text-logo-blue" />
+              <Clock className="w-5 h-5 text-logo-blue"aria-hidden="true" focusable="false" />
               <p className="text-gray-700"><span className="font-semibold">Next day</span> standard delivery</p>
             </div>
             <div className="bg-white/70 backdrop-blur rounded-xl p-4 shadow flex items-center gap-3 justify-center">
-              <FileText className="w-5 h-5 text-logo-blue" />
+              <FileText className="w-5 h-5 text-logo-blue" aria-hidden="true" focusable="false"/>
               <p className="text-gray-700">Clear, organized folders</p>
             </div>
           </div>
