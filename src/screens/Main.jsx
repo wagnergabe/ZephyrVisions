@@ -36,50 +36,7 @@ const Main = () => {
             muted
             playsInline
           />
-
-          {/* 🎬 Play Full Reel Button */}
-          <button
-            onClick={() => setShowReel(true)}
-            className="absolute bottom-6 left-1/2 -translate-x-1/2 bg-white/90 hover:bg-white text-gray-900
-                       font-semibold px-5 py-2 rounded-full shadow-lg flex items-center gap-2 transition"
-          >
-            <PlayCircle className="w-5 h-5" aria-hidden="true" focusable="false" />
-            Play Sampler Video (With Sound)
-          </button>
-        </div>
-
-        {/* 🎧 Full Reel Modal */}
-        {showReel && (
-          <div
-            className="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm grid place-items-center p-4"
-            role="dialog"
-            aria-modal="true"
-            onClick={() => setShowReel(false)}
-          >
-            <div
-              className="relative w-full max-w-5xl aspect-video bg-black rounded-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={() => setShowReel(false)}
-                className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/60 hover:bg-black/70 text-white"
-                aria-label="Close"
-              >
-                <X className="w-5 h-5" aria-hidden="true" focusable="false" />
-              </button>
-
-              <video
-                className="w-full h-full"
-                src="https://zephyr-media.s3.us-east-1.amazonaws.com/final+again.mp4"
-                autoPlay
-                controls
-                playsInline
-              />
-            </div>
           </div>
-        )}
-
-        {/* 🏆 Rest of your existing content continues below */}
 
 
         {/* 🏆 Photo Contest Win Banner */}
