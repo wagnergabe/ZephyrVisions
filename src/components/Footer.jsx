@@ -38,7 +38,7 @@ const Footer = () => {
               href="https://www.instagram.com/zvdrones"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
+              aria-label="Instagram (opens in a new tab)"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
               <FaInstagram size={32} aria-hidden="true" focusable="false" />
@@ -48,7 +48,7 @@ const Footer = () => {
               href="https://www.youtube.com/@zvdrones"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="YouTube"
+              aria-label="Youtube (opens in a new tab)"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
               <FaYoutube size={32} aria-hidden="true" focusable="false" />
@@ -58,7 +58,7 @@ const Footer = () => {
               href="https://www.linkedin.com/company/zephyr-visions/"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="LinkedIn (opens in a new tab)"
               className="text-gray-400 hover:text-[#07C0EA] hover:scale-125 transition"
             >
               <FaLinkedin size={32} aria-hidden="true" focusable="false" />

@@ -11,7 +11,7 @@ import downtown from "../assets/downtown.jpg";
 import birdsun from "../assets/birdsun.jpg";
 import park from "../assets/Park.jpg";
 import osprey from "../assets/osprey.jpg";
-import cody from '../assets/cody_home.png';
+import cody from "../assets/cody_home.png";
 
 const VideoCard = ({ title, videoUrl, thumbnailUrl }) => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -125,19 +125,28 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
             {/* nav buttons BELOW the close button */}
             <button
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white z-10"
+              className="absolute left-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/90 hover:bg-white text-gray-900 z-10 shadow-md"
               aria-label="Previous image"
               type="button"
             >
-              <ChevronLeft className="w-6 h-6" />
+              <ChevronLeft
+                className="w-6 h-6"
+                aria-hidden="true"
+                focusable="false"
+              />
             </button>
+
             <button
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/20 hover:bg-white/30 text-white z-10"
+              className="absolute right-3 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/90 hover:bg-white text-gray-900 z-10 shadow-md"
               aria-label="Next image"
               type="button"
             >
-              <ChevronRight className="w-6 h-6" />
+              <ChevronRight
+                className="w-6 h-6"
+                aria-hidden="true"
+                focusable="false"
+              />
             </button>
           </div>
 
@@ -294,7 +303,7 @@ const Gallery = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             <VideoCard
-              title="Cinematic Winter Flyover – Newest Upload"
+              title="Showreel"
               videoUrl="https://youtu.be/xKIpesDVI2Q?si=P7sadNl8BwHXI9IT"
               thumbnailUrl="https://img.youtube.com/vi/xKIpesDVI2Q/maxresdefault.jpg"
             />
