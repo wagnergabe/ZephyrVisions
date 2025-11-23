@@ -4,6 +4,7 @@ import park from '../assets/Park.jpg'
 
 export default function Photography() {
   // Drone real-estate / neighborhood shots (direct CDN links)
+  
   const gallery = [
     park,
     "https://cdn.pixabay.com/photo/2018/08/18/22/45/real-estate-3615617_1280.jpg",

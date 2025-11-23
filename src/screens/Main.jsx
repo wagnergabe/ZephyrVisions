@@ -23,6 +23,10 @@ const Main = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  useEffect(() => {
+  document.title = "ZV Drones | Minneapolis Drone Photography & FPV Flythroughs";
+}, []);
+
   return (
     <>
       <main className="flex flex-col items-center w-full h-full justify-center" id = "main-content">
