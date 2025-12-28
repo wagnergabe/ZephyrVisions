@@ -130,66 +130,73 @@ const Drones = () => {
     </>
   )}
 </main>
+{/* Mini 5 Pro Section */}
+<h2
+  className={`${
+    activeButton === "picVid"
+      ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] font-space-mono motion-preset-slide-down"
+      : "hidden"
+  }`}
+>
+  Mini 5 Pro
+</h2>
 
-        {/* Mini 4 Pro Section */}
-        <h2
-          className={`${
-            activeButton === "picVid"
-              ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] font-space-mono motion-preset-slide-down"
-              : "hidden"
-          }`}
-        >
-          Mini 4 Pro
-        </h2>
-        <main
-          className={`${
-            activeButton === "picVid"
-              ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
-              : ""
-          }`}
-        >
-          {activeButton === "picVid" && (
-            <>
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-                <div className="my-[20px]">
-                  <p className="font-bold">4K HDR Video Recording</p>
-                  <p>
-                    Ideal for professional real estate, event photography, and high-quality promotional content.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">360-degree Obstacle Avoidance System</p>
-                  <p>
-                    Ensures safe and precise flights, even in complex environments, allowing for creative shots in tight spaces.
-                  </p>
-                </div>
-              </aside>
+<main
+  className={`${
+    activeButton === "picVid"
+      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
+      : ""
+  }`}
+>
+  {activeButton === "picVid" && (
+    <>
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
+        <div className="my-[20px]">
+          <p className="font-bold">Next-Generation 4K HDR Imaging</p>
+          <p>
+            Delivers ultra-sharp, color-accurate footage with improved dynamic
+            range—ideal for real estate, marketing, and cinematic aerial visuals.
+          </p>
+        </div>
 
-              <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
-                <img
-                  src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/f96def8770cb7529d7a98731fa2117dd@ultra.jpg"
-                  className="motion-scale-in-75"
-                  alt="Drone Image"
-                />
-              </div>
+        <div>
+          <p className="font-bold">Omnidirectional Obstacle Sensing</p>
+          <p>
+            Advanced multi-directional sensors provide confident flight control
+            in tight or complex environments while maintaining smooth motion.
+          </p>
+        </div>
+      </aside>
 
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-                <div className="my-[20px]">
-                  <p className="font-bold">Vertical Shooting Capabilities</p>
-                  <p>
-                    Delivers social-media-ready content for platforms like Instagram and Meta without requiring post-editing adjustments.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">Extended Flight Time</p>
-                  <p>
-                    Ensures efficiency during shoots, allowing coverage across large areas or multiple perspectives in a single flight.
-                  </p>
-                </div>
-              </aside>
-            </>
-          )}
-        </main>
+      <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
+        <img
+          src="https://www-cdn.djiits.com/cms/uploads/3462d29fa23cf5d29fce9171fb2b6b9d@374*374.png"
+          className="motion-scale-in-75"
+          alt="Mini 5 Pro Drone"
+        />
+      </div>
+
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
+        <div className="my-[20px]">
+          <p className="font-bold">True Vertical Capture</p>
+          <p>
+            Native vertical shooting produces social-media-ready content for
+            Instagram, Reels, and Shorts—no cropping or rotation required.
+          </p>
+        </div>
+
+        <div>
+          <p className="font-bold">Extended Flight Endurance</p>
+          <p>
+            Increased flight efficiency allows longer coverage per battery,
+            reducing downtime and maximizing capture opportunities.
+          </p>
+        </div>
+      </aside>
+    </>
+  )}
+</main>
+
 
         {/* Air 3S Section */}
         <h2
