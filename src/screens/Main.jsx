@@ -84,22 +84,22 @@ const Main = () => {
           </section>
 
           <h2 className="text-4xl md:text-5xl font-bold text-[#07C0EA] mb-4">
-            Introducing the Mavic 4 Pro
-          </h2>
-          <p className="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-300">
-            Now flying with 100MP power and cinematic precision. Next-Level
-            Aerial Imaging — Now Available with Zephyr Visions.
-          </p>
-          <img
-            src="https://www.dpreview.com/files/p/articles/7871034403/Mavic_4_Pro_Product_KV_Close-up_dark.jpeg"
-            alt="DJI Mavic 4 Pro"
-            className="mx-auto w-full max-w-md mb-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
-          />
-          <Link to="/drones">
-            <button className="bg-[#07C0EA] text-black font-semibold text-lg px-8 py-3 rounded-full hover:bg-white hover:text-[#07C0EA] transition duration-300">
-              Explore the Fleet
-            </button>
-          </Link>
+  Introducing the Avata 360
+</h2>
+<p className="text-lg md:text-xl mb-6 max-w-3xl mx-auto text-gray-300">
+  Capture immersive, interactive 360° FPV footage with unmatched agility.
+  Next-Level Aerial Storytelling. Now Available with Zephyr Visions.
+</p>
+<img
+  src="https://cdn.mos.cms.futurecdn.net/asHKNLNxSxjBjtMyKMXW6U-1920-80.jpg.webp"
+  alt="DJI Avata 360"
+  className="mx-auto w-full max-w-md mb-6 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+/>
+<Link to="/drones">
+  <button className="bg-[#07C0EA] text-black font-semibold text-lg px-8 py-3 rounded-full hover:bg-white hover:text-[#07C0EA] transition duration-300">
+    Explore the Fleet
+  </button>
+</Link>
         </section>
 
         {/* SERVICES SECTION */}

@@ -33,6 +33,15 @@ const Drones = () => {
           >
             INDOOR
           </button>
+          <button
+  className={`font-bold md:border-b-4 my-2 mx-10 border-black lg:text-2xl ${
+    activeButton === "avata360" ? "py-2 px-4 bg-gray-300 border rounded" : ""
+  }`}
+  onClick={() => setActiveButton("avata360")}
+  disabled={activeButton === "avata360"}
+>
+  360
+</button>
 
           <button
             className={`my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
@@ -190,6 +199,71 @@ const Drones = () => {
           <p>
             Increased flight efficiency allows longer coverage per battery,
             reducing downtime and maximizing capture opportunities.
+          </p>
+        </div>
+      </aside>
+    </>
+  )}
+</main>
+
+{/* Avata 360 Section */}
+<h2
+  className={`${
+    activeButton === "avata360"
+      ? "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
+      : "hidden"
+  }`}
+>
+  Avata 360
+</h2>
+
+<main
+  className={`${
+    activeButton === "avata360"
+      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
+      : ""
+  }`}
+>
+  {activeButton === "avata360" && (
+    <>
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
+        <div className="my-[20px] max-h-64">
+          <p className="font-bold">Immersive 360° Capture</p>
+          <p>
+            Create interactive aerial footage that lets viewers look around the
+            scene and experience the space from every angle.
+          </p>
+        </div>
+        <div className="max-h-64">
+          <p className="font-bold">Dynamic FPV Movement</p>
+          <p>
+            Smooth, close-range flight paths add energy and motion to real estate,
+            events, venues, and promotional content.
+          </p>
+        </div>
+      </aside>
+
+      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
+        <img
+          src="https://www-cdn.djiits.com/cms/uploads/19c15ba39f4574808ca6b0380b7d44dc@374*374.png"
+          className="motion-scale-in-75"
+          alt="Avata 360 Drone"
+        />
+      </div>
+
+      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
+        <div className="my-[20px] max-h-64">
+          <p className="font-bold">Interactive Viewing Experience</p>
+          <p>
+            Perfect for content where clients want viewers to pan, drag, and
+            explore the environment beyond a standard video frame.
+          </p>
+        </div>
+        <div className="max-h-64">
+          <p className="font-bold">Perfect for Showcases</p>
+          <p>
+            Ideal for immersive property tours, event spaces, construction sites,
+            resorts, and branded social media content.
           </p>
         </div>
       </aside>
