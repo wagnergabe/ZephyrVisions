@@ -18,34 +18,34 @@ const DELIVERABLE_ICONS = {
 
 function ClientPortal() {
   const [projectCode, setProjectCode] = useState("");
-const [project, setProject] = useState(null);
-const [error, setError] = useState("");
-const [isLoading, setIsLoading] = useState(false);
+  const [project, setProject] = useState(null);
+  const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
- const handleSubmit = (event) => {
-  event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-  const normalizedCode = projectCode.trim().toUpperCase();
+    const normalizedCode = projectCode.trim().toUpperCase();
 
-  setError("");
-  setProject(null);
-  setIsLoading(true);
+    setError("");
+    setProject(null);
+    setIsLoading(true);
 
-  window.setTimeout(() => {
-    const matchedProject = PROJECTS[normalizedCode];
+    window.setTimeout(() => {
+      const matchedProject = PROJECTS[normalizedCode];
 
-    if (!matchedProject) {
-      setError(
-        "We couldn’t find that project. Check the code from your delivery email or contact Zephyr Visions for help."
-      );
+      if (!matchedProject) {
+        setError(
+          "We couldn’t find that project. Check the code from your delivery email or contact Zephyr Visions for help."
+        );
+        setIsLoading(false);
+        return;
+      }
+
+      setProject(matchedProject);
       setIsLoading(false);
-      return;
-    }
-
-    setProject(matchedProject);
-    setIsLoading(false);
-  }, 500);
-};
+    }, 500);
+  };
 
   return (
     <main className="min-h-screen bg-slate-950 px-5 py-16 text-white">
@@ -80,62 +80,63 @@ const [isLoading, setIsLoading] = useState(false);
                 type="text"
                 value={projectCode}
                 onChange={(event) => setProjectCode(event.target.value)}
-                placeholder="Example: ZV-DEMO-2026"
                 autoComplete="off"
                 className="w-full rounded-lg border border-slate-600 bg-slate-950 px-4 py-3 text-white outline-none transition focus:border-[#07C0EA] focus:ring-2 focus:ring-[#07C0EA]/30"
               />
 
               <button
-  type="submit"
-  disabled={isLoading || !projectCode.trim()}
-  className="rounded-lg bg-[#07C0EA] px-6 py-3 font-bold text-black transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
->
-  {isLoading ? "Searching..." : "Find project"}
-</button>
+                type="submit"
+                disabled={isLoading || !projectCode.trim()}
+                className="rounded-lg bg-[#07C0EA] px-6 py-3 font-bold text-black transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                {isLoading ? "Searching..." : "Find project"}
+              </button>
             </div>
-
-         
           </form>
 
-       {error && (
-  <div
-    role="alert"
-    className="mt-6 rounded-lg border border-amber-500/40 bg-amber-950/40 p-5 text-amber-100"
-  >
-    <p className="font-semibold">Project not found</p>
-    <p className="mt-2 text-sm leading-6 text-amber-100/80">
-      {error}
-    </p>
-    <Link
-      to="/contact"
-      className="mt-3 inline-block text-sm font-semibold text-[#07C0EA]"
-    >
-      Contact Zephyr Visions
-    </Link>
-  </div>
-)}
+          {error && (
+            <div
+              role="alert"
+              className="mt-6 rounded-lg border border-amber-500/40 bg-amber-950/40 p-5 text-amber-100"
+            >
+              <p className="font-semibold">Project not found</p>
+
+              <p className="mt-2 text-sm leading-6 text-amber-100/80">
+                {error}
+              </p>
+
+              <Link
+                to="/contact"
+                className="mt-3 inline-block text-sm font-semibold text-[#07C0EA]"
+              >
+                Contact Zephyr Visions
+              </Link>
+            </div>
+          )}
 
           {project && (
             <article className="mt-8 border-t border-slate-700 pt-8">
               <div className="mb-7 overflow-hidden rounded-xl border border-slate-700">
-  <img
-    src={project.thumbnail}
-    alt={`${project.project} preview`}
-    className="h-44 w-full object-cover sm:h-56"
-  />
-</div>
+                <img
+                  src={project.thumbnail}
+                  alt={`${project.project} preview`}
+                  className="h-44 w-full object-cover sm:h-56"
+                />
+              </div>
+
               <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-sm uppercase tracking-widest text-[#07C0EA]">
-                    <p className="text-sm uppercase tracking-widest text-[#07C0EA]">
-  {project.client}
-</p>
+                    {project.client}
+                  </p>
 
-<p className="mt-2 text-sm font-semibold uppercase tracking-wider text-slate-400">
-  {project.projectType}
-</p>
-</p>
-                    
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-slate-400">
+                    {project.projectType}
+                  </p>
+
+                  <h2 className="mt-3 text-2xl font-bold text-white">
+                    {project.project}
+                  </h2>
 
                   <p className="mt-2 text-sm text-slate-400">
                     Project ID:{" "}
@@ -168,19 +169,19 @@ const [isLoading, setIsLoading] = useState(false);
                 </h3>
 
                 <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-                 {project.deliverables.map((item) => {
-  const Icon = DELIVERABLE_ICONS[item.icon];
+                  {project.deliverables.map((item) => {
+                    const Icon = DELIVERABLE_ICONS[item.icon] ?? FiFileText;
 
-  return (
-    <li
-      key={item.label}
-      className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-slate-300"
-    >
-      <Icon className="text-xl text-[#07C0EA]" />
-      <span>{item.label}</span>
-    </li>
-  );
-})}
+                    return (
+                      <li
+                        key={item.label}
+                        className="flex items-center gap-3 rounded-lg border border-slate-700 bg-slate-950 px-4 py-3 text-slate-300"
+                      >
+                        <Icon className="text-xl text-[#07C0EA]" />
+                        <span>{item.label}</span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
 
@@ -188,16 +189,17 @@ const [isLoading, setIsLoading] = useState(false);
                 {project.description}
               </p>
 
-          <div className="mt-8 flex justify-center">
-  <a
-    href={project.deliveryUrl}
-    target="_blank"
-    rel="noreferrer"
-    className="inline-flex items-center rounded-lg bg-[#07C0EA] px-8 py-4 font-bold text-black transition hover:bg-cyan-300"
-  >
-    Download project files
-  </a>
-</div>
+              <div className="mt-8 flex justify-center">
+                <a
+                  href={project.deliveryUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-lg bg-[#07C0EA] px-8 py-4 text-lg font-bold text-black shadow-lg transition hover:scale-105 hover:bg-cyan-300"
+                >
+                  <FiDownload className="text-xl" />
+                  Download project files
+                </a>
+              </div>
             </article>
           )}
         </div>

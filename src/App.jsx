@@ -17,6 +17,9 @@ import Mapping from "./screens/Mapping";
 import Certs from "./screens/Certs";
 import Policy from "./screens/PrivacyPolicy";
 import ClientPortal from "./screens/ClientPortal";
+import Login from "./screens/Login";
+import ClientDashboard from "./screens/ClientDashboard";
+import AdminDashboard from "./screens/AdminDashboard";
 
 function App() {
   return (
@@ -40,6 +43,9 @@ function App() {
         <Route path="/certs" element={<Certs />} />
         <Route path="/privacy" element={<Policy />} />
         <Route path="/client-portal" element={<ClientPortal />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/dashboard" element={<ClientDashboard />} />
+        <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
 
       <Footer />
