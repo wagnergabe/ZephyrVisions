@@ -25,4 +25,7 @@ dist-ssr
 src/assets/home_vid(1).mp4
 src/assets/home_vid.mp4
 *.mp4
-
+.env
+server/.env
+node_modules
+server/node_modules
