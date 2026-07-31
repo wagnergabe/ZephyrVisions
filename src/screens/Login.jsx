@@ -1,11 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { checkApiHealth } from "../services/api";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  useEffect(() => {
+  async function testBackendConnection() {
+    try {
+      const data = await checkApiHealth();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  testBackendConnection();
+}, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
