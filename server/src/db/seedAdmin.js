@@ -2,8 +2,14 @@ import "dotenv/config";
 import bcrypt from "bcrypt";
 import pool from "./pool.js";
 
-const ADMIN_EMAIL = "admin@zephyrvisions.com";
-const ADMIN_PASSWORD = "ChangeMeImmediately123!";
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+if (!ADMIN_EMAIL || !ADMIN_PASSWORD) {
+  throw new Error(
+    "ADMIN_EMAIL and ADMIN_PASSWORD must be configured in server/.env"
+  );
+}
 
 async function seedAdmin() {
   try {
@@ -13,7 +19,14 @@ async function seedAdmin() {
     );
 
     if (existingUser.rows.length > 0) {
-      console.log("Admin user already exists.");
+      const passwordHash = await bcrypt.hash(ADMIN_PASSWORD, 12);
+
+      await pool.query(
+        "UPDATE users SET password_hash = $1 WHERE email = $2",
+        [passwordHash, ADMIN_EMAIL]
+      );
+
+      console.log("Admin password updated.");
       return;
     }
 

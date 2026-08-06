@@ -1,6 +1,7 @@
 import cors from "cors";
 import express from "express";
 import pool from "./db/pool.js";
+import authRoutes from "./routes/auth.js";
 
 const app = express();
 
@@ -11,6 +12,8 @@ app.use(
 );
 
 app.use(express.json());
+
+app.use("/api/auth", authRoutes);
 
 app.get("/api/health", (request, response) => {
   response.status(200).json({

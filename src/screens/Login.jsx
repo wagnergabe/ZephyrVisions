@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { checkApiHealth } from "../services/api";
+import { loginUser } from "../services/api";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
   async function testBackendConnection() {
@@ -21,22 +23,29 @@ function Login() {
   testBackendConnection();
 }, []);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setError("");
+  const handleSubmit = async (event) => {
+  event.preventDefault();
 
-    if (!email.trim() || !password.trim()) {
-      setError("Enter your email and password.");
-      return;
-    }
+  setError("");
+  setIsLoading(true);
 
-    if (email.toLowerCase() === "admin@zephyrvisions.com") {
+  try {
+    const data = await loginUser(email.trim().toLowerCase(), password);
+
+    sessionStorage.setItem("authToken", data.token);
+    sessionStorage.setItem("currentUser", JSON.stringify(data.user));
+
+    if (data.user.role === "admin") {
       navigate("/admin");
-      return;
+    } else {
+      navigate("/dashboard");
     }
-
-    navigate("/dashboard");
-  };
+  } catch (error) {
+    setError(error.message);
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   return (
     <main className="min-h-screen bg-slate-950 px-5 py-16 text-white">
@@ -100,12 +109,13 @@ function Login() {
               </p>
             )}
 
-            <button
-              type="submit"
-              className="w-full rounded-lg bg-[#07C0EA] px-6 py-3 font-bold text-black transition hover:bg-cyan-300"
-            >
-              Sign in
-            </button>
+         <button
+  type="submit"
+  disabled={isLoading}
+  className="w-full rounded-lg bg-[#07C0EA] px-6 py-3 font-bold text-black transition hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-50"
+>
+  {isLoading ? "Signing in..." : "Sign in"}
+</button>
           </form>
         </div>
       </section>
