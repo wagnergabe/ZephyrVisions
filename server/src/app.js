@@ -2,6 +2,9 @@ import cors from "cors";
 import express from "express";
 import pool from "./db/pool.js";
 import authRoutes from "./routes/auth.js";
+import adminRoutes from "./routes/admin.js";
+import clientRoutes from "./routes/clients.js";
+import projectRoutes from "./routes/projects.js";
 
 const app = express();
 
@@ -14,6 +17,12 @@ app.use(
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+
+app.use("/api/admin", adminRoutes);
+
+app.use("/api/clients", clientRoutes);
+
+app.use("/api/projects", projectRoutes);
 
 app.get("/api/health", (request, response) => {
   response.status(200).json({
