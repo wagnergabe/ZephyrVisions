@@ -1,11 +1,59 @@
-const stats = [
-  { label: "Clients", value: 1 },
-  { label: "Active projects", value: 1 },
-  { label: "Delivered projects", value: 1 },
-  { label: "Files uploaded", value: 4 },
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const emptyStats = [
+  { label: "Clients", value: 0 },
+  { label: "Active projects", value: 0 },
+  { label: "Delivered projects", value: 0 },
+  { label: "Files uploaded", value: 0 },
 ];
 
+
 function AdminDashboard() {
+  const navigate = useNavigate();
+
+  const [stats, setStats] = useState(emptyStats);
+  const [recentProjects, setRecentProjects] = useState([]);
+
+  useEffect(() => {
+    async function loadDashboard() {
+      try {
+        const token = sessionStorage.getItem("authToken");
+
+        const response = await fetch(
+          "http://localhost:5000/api/admin/dashboard",
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Unable to load dashboard.");
+        }
+
+        const data = await response.json();
+
+
+        setStats([
+          { label: "Clients", value: data.clients },
+          { label: "Active projects", value: data.activeProjects },
+          { label: "Delivered projects", value: data.deliveredProjects },
+          { label: "Files uploaded", value: data.filesUploaded },
+        ]);
+
+        setRecentProjects(data.recentProjects);
+
+      } catch (error) {
+        console.error(error);
+      }
+    }
+
+    loadDashboard();
+  }, []);
+
   return (
     <main className="min-h-screen bg-slate-950 px-5 py-12 text-white">
       <section className="mx-auto max-w-6xl">
@@ -22,12 +70,23 @@ function AdminDashboard() {
             </p>
           </div>
 
-          <button
-            type="button"
-            className="rounded-lg bg-[#07C0EA] px-5 py-3 font-bold text-black transition hover:bg-cyan-300"
-          >
-            Create project
-          </button>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <button
+              type="button"
+              onClick={() => navigate("/admin/clients/new")}
+              className="rounded-lg border border-slate-600 px-5 py-3 font-semibold text-slate-200 transition hover:bg-slate-800"
+            >
+              Add client
+            </button>
+
+            <button
+              type="button"
+              onClick={() => navigate("/admin/projects/new")}
+              className="rounded-lg bg-[#07C0EA] px-5 py-3 font-bold text-black transition hover:bg-cyan-300"
+            >
+              Create project
+            </button>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -59,18 +118,48 @@ function AdminDashboard() {
               </thead>
 
               <tbody>
-                <tr className="border-t border-slate-700">
-                  <td className="px-6 py-4 font-semibold">
-                    Commercial Roof Inspection
-                  </td>
-                  <td className="px-6 py-4 text-slate-300">Acme Roofing</td>
-                  <td className="px-6 py-4">
-                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-sm font-semibold text-emerald-300">
-                      Delivered
-                    </span>
-                  </td>
-                  <td className="px-6 py-4 text-slate-300">July 2026</td>
-                </tr>
+                {recentProjects.length === 0 ? (
+                  <tr className="border-t border-slate-700">
+                    <td
+                      colSpan="4"
+                      className="px-6 py-8 text-center text-slate-400"
+                    >
+                      No projects yet.
+                    </td>
+                  </tr>
+                ) : (
+                  recentProjects.map((project) => (
+                    <tr
+                      key={project.id}
+                      className="border-t border-slate-700"
+                    >
+                      <td className="px-6 py-4 font-semibold">
+                        <Link
+                          to={`/admin/projects/${project.id}`}
+                          className="transition hover:text-[#07C0EA]"
+                        >
+                          {project.name}
+                        </Link>
+                      </td>
+
+                      <td className="px-6 py-4 text-slate-300">
+                        {project.client || "No client assigned"}
+                      </td>
+
+                      <td className="px-6 py-4">
+                        <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-sm font-semibold text-emerald-300">
+                          {project.status}
+                        </span>
+                      </td>
+
+                      <td className="px-6 py-4 text-slate-300">
+                        {project.deliveryDate
+                          ? new Date(project.deliveryDate).toLocaleDateString()
+                          : "Not scheduled"}
+                      </td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>

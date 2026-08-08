@@ -20,6 +20,10 @@ import ClientPortal from "./screens/ClientPortal";
 import Login from "./screens/Login";
 import ClientDashboard from "./screens/ClientDashboard";
 import AdminDashboard from "./screens/AdminDashboard";
+import AddClient from "./screens/AddClient";
+import CreateProject from "./screens/CreateProject";
+import AdminProjectDetails from "./screens/AdminProjectDetails";
+import EditProject from "./screens/EditProject";
 
 function App() {
   return (
@@ -46,6 +50,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/dashboard" element={<ClientDashboard />} />
         <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/clients/new" element={<AddClient />} />
+        <Route path="/admin/projects/new" element={<CreateProject />} />
+        <Route path="/admin/projects/:projectId" element={<AdminProjectDetails />} />
+        <Route path="/admin/projects/:projectId/edit" element={<EditProject />} />   
+
       </Routes>
 
       <Footer />
