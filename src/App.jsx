@@ -24,6 +24,7 @@ import AddClient from "./screens/AddClient";
 import CreateProject from "./screens/CreateProject";
 import AdminProjectDetails from "./screens/AdminProjectDetails";
 import EditProject from "./screens/EditProject";
+import ClientProjectDetails from "./screens/ClientProjectDetails";
 
 function App() {
   return (
@@ -53,7 +54,9 @@ function App() {
         <Route path="/admin/clients/new" element={<AddClient />} />
         <Route path="/admin/projects/new" element={<CreateProject />} />
         <Route path="/admin/projects/:projectId" element={<AdminProjectDetails />} />
-        <Route path="/admin/projects/:projectId/edit" element={<EditProject />} />   
+        <Route path="/admin/projects/:projectId/edit" element={<EditProject />} />
+        <Route path="/portal/projects/:projectId" element={<ClientProjectDetails />}
+        />
 
       </Routes>
 
