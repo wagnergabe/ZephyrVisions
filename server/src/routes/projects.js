@@ -1,4 +1,7 @@
 import { Router } from "express";
+import { upload } from "../config/upload.js";
+import { getProjectDeliverables, uploadProjectDeliverable, downloadDeliverable } from "../controllers/deliverableController.js";
+
 import {
   createProject,
   getProjectById,
@@ -12,10 +15,32 @@ import {
 const router = Router();
 
 router.get(
+  "/:projectId/deliverables",
+  requireAuth,
+  requireAdmin,
+  getProjectDeliverables
+);
+
+router.post(
+  "/:projectId/deliverables",
+  requireAuth,
+  requireAdmin,
+  upload.single("file"),
+  uploadProjectDeliverable
+);
+
+router.get(
   "/:projectId",
   requireAuth,
   requireAdmin,
   getProjectById
+);
+
+router.get(
+  "/deliverables/:deliverableId/download",
+  requireAuth,
+  requireAdmin,
+  downloadDeliverable
 );
 
 router.post(
