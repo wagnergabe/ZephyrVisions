@@ -1,60 +1,197 @@
-Zephyr Visions
+# Zephyr Visions Website & Client Portal
 
-Website: https://www.zephyrvisions.com
+**Live Website:** https://www.zephyrvisions.com  
+**Project Type:** Full-Stack Web Application / Self-Hosted Infrastructure
 
-Location: Minnesota, USA
-Business Type: Commercial Drone Services
+<img width="1834" height="802" alt="image" src="https://github.com/user-attachments/assets/f173ce20-2b13-43d0-b7aa-564262e00a0d" />
 
-Overview
 
-Zephyr Visions is a professional drone services business providing high-quality aerial photography, videography, thermal imaging, and mapping solutions across Minnesota.
+Zephyr Visions is a full-stack web application developed to support my commercial drone services business. In addition to the public-facing website, the project includes a secure client delivery portal for managing clients, drone projects, and digital deliverables.
 
-The company focuses on delivering data-driven visuals and inspections for industries such as real estate, construction, infrastructure, and event coverage. By combining advanced UAV technology with real-world operational experience, Zephyr Visions delivers reliable and actionable results for clients.
+The project was built to solve a real operational need: replacing manual project delivery workflows with a centralized system where clients can securely access project information and download files associated with their account.
 
-Services Offered
-Aerial Photography & Videography
-Real Estate Media & Marketing Content
-Construction Progress Monitoring
-Thermal Imaging & Roof Inspections
-Mapping & 3D Modeling
-FPV Flythroughs (Indoor & Outdoor)
-Event Coverage
-Equipment & Technology
+## Features
 
-Each platform is selected based on mission requirements, ensuring efficiency, safety, and high-quality data capture.
+### Client Portal
 
-Real-World Application
+<img width="1293" height="1095" alt="image" src="https://github.com/user-attachments/assets/33326e3f-16a0-42bb-9e40-18352eba6bb6" />
 
-Zephyr Visions supports a variety of real-world use cases, including:
 
-Property marketing and real estate listings
-Infrastructure and roof inspections using thermal imaging
-Construction site monitoring and documentation
-Promotional and commercial video production
-Precision mapping and aerial data collection
+- Secure client authentication
+- Personalized client dashboard
+- Project status, flight date, and delivery date tracking
+- Individual project detail pages
+- Secure access to project deliverables
+- Client-specific authorization preventing access to other clients' projects and files
 
-The business emphasizes FAA-compliant operations, safety, and client-focused deliverables.
+### Administrative Dashboard
 
-My Role
-Founded and operate Zephyr Visions as a drone services business
-Manage full project lifecycle from client outreach to final delivery
-Plan and execute UAV missions in compliance with FAA Part 107
-Capture, process, and deliver aerial imagery and data products
-Maintain and troubleshoot UAV systems and payloads
-Develop and maintain the company website and digital presence
-Skills Demonstrated
-Technical troubleshooting of UAV systems and sensors
-Real-time decision-making in field operations
-Client communication and project management
-Data capture, processing, and delivery workflows
-Working with network-connected devices and telemetry systems
-Building and maintaining a production-level web presence
-Future Improvements
-Expanded automation for mapping and inspection workflows
-Integration of advanced analytics and reporting tools
-Enhanced client portal for data delivery
-Continued expansion into industrial and enterprise drone services
-Portfolio
+<img width="1176" height="1069" alt="image" src="https://github.com/user-attachments/assets/845547cf-f1a9-48ca-9236-067fb094e473" />
 
-For examples of completed work, visit:
+- Administrator authentication and protected routes
+- Client creation and management
+- Project creation and editing
+- Project status tracking
+- Deliverable upload and download functionality
+- Dashboard statistics for clients, active projects, delivered projects, and uploaded files
+
+## Technology Stack
+
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- React Router
+
+### Backend
+
+- Node.js
+- Express
+- REST API
+- JWT authentication
+- bcrypt password hashing
+- Multer file handling
+
+### Database
+
+- PostgreSQL
+- Relational client, user, project, and deliverable data
+- Parameterized SQL queries
+
+### Infrastructure
+
+- Docker
+- Docker Compose
+- Linux
+- Proxmox
+- Environment-based application configuration
+- Persistent storage
+
+## Application Architecture
+
+The application separates the frontend, backend API, database, and file storage layers.
+
+```text
+Client Browser
+      |
+      v
+React / Vite Frontend
+      |
+      | HTTP / REST
+      v
+Node.js / Express API
+      |
+      +--------------------+
+      |                    |
+      v                    v
+PostgreSQL             File Storage
+      |
+      v
+Clients / Users /
+Projects / Deliverables
+```
+
+This architecture allows the frontend and backend services to be configured independently between development and production environments.
+
+## Authentication and Authorization
+
+Authentication is implemented using JSON Web Tokens (JWT).
+
+After authentication, protected API routes validate the user's token and role before allowing access to resources.
+
+The application supports separate administrator and client permissions.
+
+Administrators can manage clients, projects, and deliverables, while clients are restricted to projects and files associated with their own account.
+
+Authorization is enforced by the backend rather than relying solely on frontend route protection.
+
+During testing, requests attempting to access projects belonging to another client were rejected by the API.
+
+## File Delivery
+
+<img width="1666" height="744" alt="image" src="https://github.com/user-attachments/assets/1a41b021-db02-4819-8f7a-a00b506a8c4e" />
+
+
+Administrators can upload project deliverables through the project management interface. File metadata is associated with the corresponding project in PostgreSQL while uploaded files are handled separately by the application storage layer.
+
+Authenticated clients can then access and download deliverables associated with their projects.
+
+The storage path is environment-configurable so development and production environments can use different storage locations.
+
+## Local Development
+
+PostgreSQL runs locally using Docker Compose.
+
+```text
+Docker Compose
+      |
+      v
+PostgreSQL 17
+      |
+      v
+Persistent Docker Volume
+```
+
+Environment variables are used for database credentials, JWT configuration, API endpoints, administrative credentials, and file-storage paths.
+
+Sensitive environment files are excluded from Git source control.
+
+## Troubleshooting & Technical Challenges
+
+Development of the portal involved diagnosing issues across multiple layers of the application.
+
+Examples included:
+
+- Debugging frontend-to-API routing issues
+- Diagnosing HTTP 404 and authorization responses
+- Testing resource ownership restrictions
+- Troubleshooting file-system paths between Windows development and Linux production environments
+- Configuring environment-dependent API endpoints
+- Debugging PostgreSQL and application connectivity
+- Testing authenticated file upload and download workflows
+- Using browser developer tools and backend logs to isolate application errors
+
+## Security
+
+Security controls implemented in the project include:
+
+- bcrypt password hashing
+- JWT authentication
+- Role-based authorization
+- Backend resource ownership validation
+- Protected API routes
+- Parameterized PostgreSQL queries
+- Environment-based secret management
+- Git exclusion of credentials and uploaded client files
+
+## Future Development
+
+The next phase of the project will expand the portal into a self-hosted large-file delivery platform for drone photography, RAW imagery, video, mapping, and inspection data.
+
+Planned improvements include:
+
+- Multi-file and folder uploads
+- Resumable/chunked uploads for large drone datasets
+- Upload progress monitoring
+- Self-hosted high-capacity storage
+- Improved file organization by client and project
+- HTTPS and production reverse-proxy configuration
+- Backup and recovery workflows
+- Infrastructure monitoring
+- Expanded production deployment documentation
+
+## Real-World Use
+
+Unlike a standalone demonstration project, Zephyr Visions is based on the workflow requirements of an operating commercial drone services business.
+
+The portal is designed around actual requirements such as managing clients, scheduling projects, tracking project status, and securely delivering aerial photography, video, thermal imagery, reports, and other large digital deliverables.
+
+## About Zephyr Visions
+
+Zephyr Visions provides commercial drone photography, videography, thermal inspection, mapping, construction monitoring, and related UAV services in Minnesota.
+
+More information and portfolio examples are available at:
+
 https://www.zephyrvisions.com
