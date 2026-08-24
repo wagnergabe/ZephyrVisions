@@ -39,7 +39,7 @@ export default function Certs() {
       {/* Return link at the bottom of this component */}
       <div className="max-w-5xl mx-auto mt-10 text-center">
         <Link
-          to="/services/infared"
+          to="/services/infrared"
           className="inline-flex items-center gap-2 rounded-full bg-white text-logo-blue px-5 py-3 shadow border border-logo-blue/30 hover:bg-blue-50 transition"
           aria-label="Return to Thermal Services (Infrared)"
         >

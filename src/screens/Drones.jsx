@@ -1,461 +1,315 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 
-const Drones = () => {
-  const [activeButton, setActiveButton] = useState("mavic4pro");
+const drones = [
+  {
+    id: "mavic4pro",
+    tab: "FLAGSHIP",
+    name: "Mavic 4 Pro",
+    tagline: "Flagship aerial imaging",
+    image:
+      "https://se-cdn.djiits.com/tpc/uploads/carousel/image/0ca84df1c0d68677e852ce314c9602d6@ultra.webp",
+    leftFeatures: [
+      {
+        title: "100MP Super Resolution",
+        text: "Industry-leading clarity for mapping, real estate, and commercial-grade photography.",
+      },
+      {
+        title: "Dual Native ISO & Hasselblad Color",
+        text: "Ultra-dynamic range and cinematic tones even in low-light conditions.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "Flagship-Level Precision",
+        text: "Engineered for demanding aerial projects, from cinematic shoots to detailed inspections.",
+      },
+      {
+        title: "360° Gimbal Rotation",
+        text: "Freely rotate the camera in any direction without shifting the drone's position.",
+      },
+    ],
+  },
 
-  const useScrollToTop = () => {
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, []);
-  };
+  {
+    id: "indoor",
+    tab: "INDOOR",
+    name: "Avata 2",
+    tagline: "Immersive indoor FPV",
+    image:
+      "https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg",
+    leftFeatures: [
+      {
+        title: "Cinematic Indoor Flythroughs",
+        text: "Navigate tight spaces with smooth, stabilized FPV control—perfect for walkthroughs of homes, showrooms, and event venues.",
+      },
+      {
+        title: "Precision Hover & Acro Mode",
+        text: "From slow, steady glides to advanced acro moves, each flight can be tailored to the environment and creative vision.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "Immersive FPV Control",
+        text: "FPV goggles and precise camera control allow smooth navigation and creative capture through complex indoor spaces.",
+      },
+      {
+        title: "4K Ultra-Stabilized Video",
+        text: "Crystal-clear 4K footage with stabilization for marketing, real estate, venues, and branded content.",
+      },
+    ],
+  },
+
+  {
+    id: "avata360",
+    tab: "360°",
+    name: "Avata 360",
+    tagline: "Immersive 360° aerial capture",
+    image:
+      "https://www-cdn.djiits.com/cms/uploads/19c15ba39f4574808ca6b0380b7d44dc@374*374.png",
+    leftFeatures: [
+      {
+        title: "Immersive 360° Capture",
+        text: "Create interactive aerial footage that lets viewers explore the scene from every angle.",
+      },
+      {
+        title: "Dynamic FPV Movement",
+        text: "Smooth, close-range flight paths add energy and motion to real estate, events, venues, and promotional content.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "Interactive Viewing",
+        text: "Give viewers the freedom to pan, drag, and explore an environment beyond a traditional video frame.",
+      },
+      {
+        title: "Built for Showcases",
+        text: "Ideal for immersive property tours, event spaces, construction sites, resorts, and branded content.",
+      },
+    ],
+  },
+
+  {
+    id: "picVid",
+    tab: "COMPACT",
+    name: "Mini 5 Pro",
+    tagline: "Compact aerial photography",
+    image:
+      "https://www-cdn.djiits.com/cms/uploads/3462d29fa23cf5d29fce9171fb2b6b9d@374*374.png",
+    leftFeatures: [
+      {
+        title: "Next-Generation 4K HDR Imaging",
+        text: "Sharp, color-accurate imagery with strong dynamic range for real estate, marketing, and aerial visuals.",
+      },
+      {
+        title: "Omnidirectional Obstacle Sensing",
+        text: "Multi-directional sensing supports confident flight in tight or complex environments.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "True Vertical Capture",
+        text: "Native vertical shooting produces social-media-ready content for Reels, Shorts, and other vertical platforms.",
+      },
+      {
+        title: "Extended Flight Endurance",
+        text: "Efficient flight performance allows longer coverage per battery and less downtime between captures.",
+      },
+    ],
+  },
+
+  {
+    id: "air3s",
+    tab: "VERSATILE",
+    name: "Air 3S",
+    tagline: "Versatile cinematic aerial video",
+    image:
+      "https://se-cdn.djiits.com/tpc/uploads/carousel/image/07d27005532c308eaec55c87cdc6f575@ultra.jpg",
+    leftFeatures: [
+      {
+        title: "Compact & Portable",
+        text: "A portable airframe makes rapid deployment easy while retaining professional aerial imaging capability.",
+      },
+      {
+        title: "High-Quality Imaging",
+        text: "Advanced camera sensors and image processing capture detailed aerial photographs and cinematic footage.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "Advanced Flight Performance",
+        text: "Stable and responsive flight characteristics make smooth, dynamic camera movement possible.",
+      },
+      {
+        title: "Intelligent Flight Modes",
+        text: "Automated flight tools support repeatable movement and creative aerial capture.",
+      },
+    ],
+  },
+
+  {
+    id: "industrial",
+    tab: "INDUSTRIAL",
+    name: "Matrice 4T",
+    tagline: "Enterprise inspection & thermal platform",
+    image:
+      "https://se-cdn.djiits.com/tpc/uploads/carousel/image/b49fb59abc89fd799b252633ad70618f@origin.jpg?format=webp",
+    leftFeatures: [
+      {
+        title: "Thermal Imaging",
+        text: "Radiometric thermal imaging supports roof inspections, heat-loss analysis, solar inspection, and other specialized applications.",
+      },
+      {
+        title: "High-Magnification Zoom",
+        text: "Detailed remote visual inspection helps capture difficult-to-reach assets while maintaining distance.",
+      },
+    ],
+    rightFeatures: [
+      {
+        title: "RTK Precision Positioning",
+        text: "High-precision positioning supports repeatable inspection, mapping, and construction workflows.",
+      },
+      {
+        title: "Enterprise Flight Platform",
+        text: "Built for demanding commercial missions requiring advanced sensors, reliability, and precise data capture.",
+      },
+    ],
+  },
+];
+
+function FeatureColumn({ features, direction }) {
+  const animation =
+    direction === "left"
+      ? "motion-preset-slide-right"
+      : "motion-preset-slide-left";
 
   return (
-    <>
-      {useScrollToTop()}
-      <section className="flex flex-col items-center justify-center md:justify-between w-[80%] h-auto mx-auto mt-5 font-poppins">
-        <div className="flex flex-col justify-around my-3 md:flex-row">
-
-              <button
-  className={`my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
-    activeButton === "mavic4pro" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-  }`}
-  onClick={() => setActiveButton("mavic4pro")}
-  disabled={activeButton === "mavic4pro"}
->
-  FLAGSHIP
-</button>
-          <button
-            className={`font-bold md:border-b-4 my-2 mx-10 border-black lg:text-2xl ${
-              activeButton === "indoor" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-            }`}
-            onClick={() => setActiveButton("indoor")}
-            disabled={activeButton === "indoor"}
-          >
-            INDOOR
-          </button>
-          <button
-  className={`font-bold md:border-b-4 my-2 mx-10 border-black lg:text-2xl ${
-    activeButton === "avata360" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-  }`}
-  onClick={() => setActiveButton("avata360")}
-  disabled={activeButton === "avata360"}
->
-  360
-</button>
-
-          <button
-            className={`my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
-              activeButton === "picVid" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-            }`}
-            onClick={() => setActiveButton("picVid")}
-            disabled={activeButton === "picVid"}
-          >
-            PICTURE
-          </button>
-
-          <button
-            className={`my-2 font-bold md:border-b-4 mx-10 border-black lg:text-2xl ${
-              activeButton === "air3s" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-            }`}
-            onClick={() => setActiveButton("air3s")}
-            disabled={activeButton === "air3s"}
-          >
-            VIDEO
-          </button>
-
-          <button
-            className={`font-bold md:border-b-4 mx-10 my-2 border-black lg:text-2xl ${
-              activeButton === "industrial" ? "py-2 px-4 bg-gray-300 border rounded" : ""
-            }`}
-            onClick={() => setActiveButton("industrial")}
-            disabled={activeButton === "industrial"}
-          >
-            INDUSTRIAL
-          </button>
-      
-        </div>
-
-        {/* Avata 2 Section */}
-        <h2
-  className={`${
-    activeButton === "indoor"
-      ? "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
-      : "hidden"
-  }`}
->
-  Avata 2 
-</h2>
-
-<main
-  className={`${
-    activeButton === "indoor"
-      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
-      : ""
-  }`}
->
-  {activeButton === "indoor" && (
-    <>
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-        <div className="my-[20px] max-h-64">
-          <p className="font-bold">Cinematic Indoor Flythroughs</p>
-          <p>
-            Navigate tight spaces with smooth, stabilized FPV control — perfect for
-            walkthroughs of homes, showrooms, and event venues.
-          </p>
-        </div>
-        <div className="max-h-64">
-          <p className="font-bold">Precision Hover & Acro Mode</p>
-          <p>
-            From slow, steady glides to advanced acro moves, tailor each flight to
-            fit your vision and environment.
-          </p>
-        </div>
-      </aside>
-
-      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
-        <img
-          src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0dad80f805dabc4da255f268f20c605b@ultra.jpg"
-          className="motion-scale-in-75"
-          alt="Indoor drone Avata 2"
-        />
-      </div>
-
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-        <div className="my-[20px] max-h-64">
-          <p className="font-bold">Immersive Goggles & Focus Mode</p>
-          <p>
-            Using FPV goggles and pinpoint camera
-            control to capture every angle indoors.
-          </p>
-        </div>
-        <div className="max-h-64">
-          <p className="font-bold">4K Ultra-Stabilized Video</p>
-          <p>
-            Crystal-clear 4K footage with built-in stabilization — ideal for
-            marketing, real estate, or branded content.
-          </p>
-        </div>
-      </aside>
-    </>
-  )}
-</main>
-{/* Mini 5 Pro Section */}
-<h2
-  className={`${
-    activeButton === "picVid"
-      ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] font-space-mono motion-preset-slide-down"
-      : "hidden"
-  }`}
->
-  Mini 5 Pro
-</h2>
-
-<main
-  className={`${
-    activeButton === "picVid"
-      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
-      : ""
-  }`}
->
-  {activeButton === "picVid" && (
-    <>
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-        <div className="my-[20px]">
-          <p className="font-bold">Next-Generation 4K HDR Imaging</p>
-          <p>
-            Delivers ultra-sharp, color-accurate footage with improved dynamic
-            range—ideal for real estate, marketing, and cinematic aerial visuals.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-bold">Omnidirectional Obstacle Sensing</p>
-          <p>
-            Advanced multi-directional sensors provide confident flight control
-            in tight or complex environments while maintaining smooth motion.
-          </p>
-        </div>
-      </aside>
-
-      <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
-        <img
-          src="https://www-cdn.djiits.com/cms/uploads/3462d29fa23cf5d29fce9171fb2b6b9d@374*374.png"
-          className="motion-scale-in-75"
-          alt="Mini 5 Pro Drone"
-        />
-      </div>
-
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-        <div className="my-[20px]">
-          <p className="font-bold">True Vertical Capture</p>
-          <p>
-            Native vertical shooting produces social-media-ready content for
-            Instagram, Reels, and Shorts—no cropping or rotation required.
-          </p>
-        </div>
-
-        <div>
-          <p className="font-bold">Extended Flight Endurance</p>
-          <p>
-            Increased flight efficiency allows longer coverage per battery,
-            reducing downtime and maximizing capture opportunities.
-          </p>
-        </div>
-      </aside>
-    </>
-  )}
-</main>
-
-{/* Avata 360 Section */}
-<h2
-  className={`${
-    activeButton === "avata360"
-      ? "text-7xl text-center px-20 mt-8 motion-preset-slide-down text-[#07C0EA] font-space-mono"
-      : "hidden"
-  }`}
->
-  Avata 360
-</h2>
-
-<main
-  className={`${
-    activeButton === "avata360"
-      ? "flex lg:flex-row flex-col h-[90%] w-[80%] items-center justify-evenly"
-      : ""
-  }`}
->
-  {activeButton === "avata360" && (
-    <>
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-        <div className="my-[20px] max-h-64">
-          <p className="font-bold">Immersive 360° Capture</p>
-          <p>
-            Create interactive aerial footage that lets viewers look around the
-            scene and experience the space from every angle.
-          </p>
-        </div>
-        <div className="max-h-64">
-          <p className="font-bold">Dynamic FPV Movement</p>
-          <p>
-            Smooth, close-range flight paths add energy and motion to real estate,
-            events, venues, and promotional content.
-          </p>
-        </div>
-      </aside>
-
-      <div className="flex flex-col items-center justify-center lg:max-w-[40%] lg:max-h-[40%]">
-        <img
-          src="https://www-cdn.djiits.com/cms/uploads/19c15ba39f4574808ca6b0380b7d44dc@374*374.png"
-          className="motion-scale-in-75"
-          alt="Avata 360 Drone"
-        />
-      </div>
-
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-        <div className="my-[20px] max-h-64">
-          <p className="font-bold">Interactive Viewing Experience</p>
-          <p>
-            Perfect for content where clients want viewers to pan, drag, and
-            explore the environment beyond a standard video frame.
-          </p>
-        </div>
-        <div className="max-h-64">
-          <p className="font-bold">Perfect for Showcases</p>
-          <p>
-            Ideal for immersive property tours, event spaces, construction sites,
-            resorts, and branded social media content.
-          </p>
-        </div>
-      </aside>
-    </>
-  )}
-</main>
-
-
-        {/* Air 3S Section */}
-        <h2
-          className={`${
-            activeButton === "air3s"
-              ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] font-space-mono motion-preset-slide-down"
-              : "hidden"
-          }`}
+    <aside
+      className={`flex flex-col gap-8 text-center lg:w-1/4 ${animation}`}
+    >
+      {features.map((feature) => (
+        <div
+          key={feature.title}
+          className="rounded-xl p-4 transition duration-300 hover:-translate-y-1 hover:bg-gray-100"
         >
-          Air 3S
-        </h2>
-        <main
-          className={`${
-            activeButton === "air3s"
-              ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
-              : ""
-          }`}
-        >
-          {activeButton === "air3s" && (
-            <>
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-                <div className="my-[20px]">
-                  <p className="font-bold">Compact Design & Portability</p>
-                  <p>
-                    The Air 3S features a sleek, compact design that makes it easy to transport and set up for spontaneous aerial shots.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">High-Quality Imaging</p>
-                  <p>
-                    Capture stunning visuals with advanced camera sensors and optimized image processing.
-                  </p>
-                </div>
-              </aside>
+          <h3 className="text-lg font-bold">
+            {feature.title}
+          </h3>
 
-              <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
-                <img
-                  src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/07d27005532c308eaec55c87cdc6f575@ultra.jpg"
-                  className="motion-scale-in-75"
-                  alt="Air 3S Drone"
-                />
-              </div>
-
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-                <div className="my-[20px]">
-                  <p className="font-bold">Advanced Flight Performance</p>
-                  <p>
-                    Enjoy improved stability and agile maneuverability for capturing smooth, dynamic footage.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">Intelligent Flight Modes</p>
-                  <p>
-                    Features like Follow Me, Waypoints, and Gesture Control enhance your aerial creativity.
-                  </p>
-                </div>
-              </aside>
-            </>
-          )}
-        </main>
-
-        {/* Matrice 4T Section */}
-        <h2
-          className={`${
-            activeButton === "industrial"
-              ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
-              : "hidden"
-          }`}
-        >
-          Matrice 4T
-        </h2>
-        <main
-          className={`${
-            activeButton === "industrial"
-              ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
-              : ""
-          }`}
-        >
-          {activeButton === "industrial" && (
-            <>
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-                <div className="my-[20px]">
-                  <p className="font-bold">Thermal Imaging</p>
-                  <p>
-                    Perfect for inspections, search-and-rescue missions, and heat monitoring.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">56x Magnification Zoom</p>
-                  <p>
-                    Captures detailed visuals, ideal for industrial inspections and mapping.
-                  </p>
-                </div>
-              </aside>
-
-              <div className="flex flex-col items-center justify-center sm:max-w-[40%] sm:max-h-[40%]">
-                <img
-                  src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/b49fb59abc89fd799b252633ad70618f@origin.jpg?format=webp"
-                  className="motion-scale-in-75"
-                  alt="Matrice 4T Drone"
-                />
-              </div>
-
-              <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-                <div className="my-[20px]">
-                  <p className="font-bold">RTK Precision Positioning</p>
-                  <p>
-                    Ensures centimeter-level accuracy, making it a top choice for surveying and construction projects.
-                  </p>
-                </div>
-                <div>
-                  <p className="font-bold">Weather Resistant</p>
-                  <p>
-                    Performs reliably in harsh conditions like rain or strong winds, ensuring uninterrupted operations.
-                  </p>
-                </div>
-              </aside>
-            </>
-          )}
-        </main>
-
-        {/* Mavic 4 Pro Section */}
-<h2
-  className={`${
-    activeButton === "mavic4pro"
-      ? "text-7xl px-20 text-center mt-8 text-[#07C0EA] motion-preset-slide-down font-space-mono"
-      : "hidden"
-  }`}
->
-  Mavic 4 Pro
-</h2>
-
-<main
-  className={`${
-    activeButton === "mavic4pro"
-      ? "flex lg:flex-row w-full flex-col h-[90%] lg:w-[80%] items-center justify-evenly"
-      : ""
-  }`}
->
-  {activeButton === "mavic4pro" && (
-    <>
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-right">
-        <div className="my-[20px]">
-          <p className="font-bold">100MP Super Resolution</p>
-          <p>
-            Industry-leading clarity for mapping, real estate, and commercial-grade photography.
+          <p className="mt-2 leading-7 text-gray-600">
+            {feature.text}
           </p>
         </div>
-        <div>
-          <p className="font-bold">Dual Native ISO & Hasselblad Color</p>
-          <p>
-            Ultra-dynamic range and cinematic tones even in low light conditions.
-          </p>
-        </div>
-      </aside>
-
-      <div className="flex flex-col items-center justify-center lg:max-w-[50%] lg:max-h-[50%]">
-        <img
-          src="https://se-cdn.djiits.com/tpc/uploads/carousel/image/0ca84df1c0d68677e852ce314c9602d6@ultra.webp"
-          className="motion-scale-in-75"
-          alt="Mavic 4 Pro"
-        />
-      </div>
-
-      <aside className="flex flex-col lg:w-[20%] items-center text-center my-[30px] motion-preset-slide-left">
-        <div className="my-[20px]">
-          <p className="font-bold">Flagship-Level Precision</p>
-          <p>
-            Engineered for demanding aerial projects, from cinematic shoots to detailed inspections.
-          </p>
-        </div>
-        <div>
-          <p className="font-bold">360° Gimbal Rotation</p>
-          <p>
-            Freely rotate the camera in any direction without shifting the drone’s position.
-          </p>
-        </div>
-      </aside>
-    </>
-  )}
-</main>
-
-      </section>
-    </>
+      ))}
+    </aside>
   );
-};
+}
+
+function Drones() {
+  const [activeDroneId, setActiveDroneId] =
+    useState("mavic4pro");
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const activeDrone = drones.find(
+    (drone) => drone.id === activeDroneId
+  );
+
+  return (
+    <main className="min-h-screen bg-white">
+      <section className="mx-auto w-[92%] max-w-7xl py-10 font-poppins">
+
+        {/* Category selector */}
+        <div className="flex flex-wrap justify-center gap-3 border-b border-gray-200 pb-7">
+          {drones.map((drone) => {
+            const isActive = activeDroneId === drone.id;
+
+            return (
+              <button
+                key={drone.id}
+                type="button"
+                onClick={() => setActiveDroneId(drone.id)}
+                className={`rounded-full px-5 py-2.5 font-bold tracking-wide transition-all duration-300 ${
+                  isActive
+                    ? "scale-105 bg-[#07C0EA] text-black shadow-lg"
+                    : "bg-gray-100 text-gray-700 hover:-translate-y-1 hover:bg-gray-200"
+                }`}
+              >
+                {drone.tab}
+              </button>
+            );
+          })}
+        </div>
+
+        {/*
+          The key intentionally changes when a new drone is selected.
+          React remounts this section, replaying the entrance animations.
+        */}
+        <section
+          key={activeDrone.id}
+          className="mt-10"
+        >
+          {/* Heading */}
+          <header className="motion-preset-slide-down text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400">
+              {activeDrone.tagline}
+            </p>
+
+            <h1 className="mt-3 font-space-mono text-4xl font-bold text-[#07C0EA] md:text-6xl lg:text-7xl">
+              {activeDrone.name}
+            </h1>
+          </header>
+
+          {/* Drone showcase */}
+          <div className="mt-12 flex flex-col items-center gap-8 lg:flex-row lg:justify-between lg:gap-12">
+
+            <FeatureColumn
+              features={activeDrone.leftFeatures}
+              direction="left"
+            />
+
+            {/* Drone image */}
+            <div className="group flex w-full items-center justify-center lg:w-2/5">
+              <div className="relative flex min-h-[300px] w-full items-center justify-center md:min-h-[400px]">
+
+                {/* subtle background glow */}
+                <div className="absolute h-52 w-52 rounded-full bg-[#07C0EA]/10 blur-3xl transition duration-500 group-hover:scale-125" />
+
+                <img
+                  src={activeDrone.image}
+                  alt={activeDrone.name}
+                  className="relative z-10 max-h-[420px] w-full object-contain motion-scale-in-75 transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105"
+                />
+              </div>
+            </div>
+
+            <FeatureColumn
+              features={activeDrone.rightFeatures}
+              direction="right"
+            />
+          </div>
+
+          {/* Bottom indicator */}
+          <div className="mt-12 flex justify-center gap-2">
+            {drones.map((drone) => (
+              <button
+                key={drone.id}
+                type="button"
+                aria-label={`View ${drone.name}`}
+                onClick={() => setActiveDroneId(drone.id)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  activeDroneId === drone.id
+                    ? "w-8 bg-[#07C0EA]"
+                    : "w-2 bg-gray-300 hover:bg-gray-400"
+                }`}
+              />
+            ))}
+          </div>
+        </section>
+      </section>
+    </main>
+  );
+}
 
 export default Drones;

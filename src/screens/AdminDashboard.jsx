@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 const emptyStats = [
   { label: "Clients", value: 0 },
@@ -21,8 +22,7 @@ function AdminDashboard() {
       try {
         const token = sessionStorage.getItem("authToken");
 
-        const response = await fetch(
-          "http://localhost:5000/api/admin/dashboard",
+        const response = await fetch(`${API_BASE_URL}/api/admin/dashboard`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

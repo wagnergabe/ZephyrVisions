@@ -16,9 +16,6 @@ import {
 } from "lucide-react";
 
 
-/** ---------------------------
- *  Simple Lightbox (no libs)
- *  --------------------------- */
 const Lightbox = ({ images, initialIndex = 0, onClose }) => {
   const [index, setIndex] = useState(initialIndex);
 
@@ -97,9 +94,7 @@ const Lightbox = ({ images, initialIndex = 0, onClose }) => {
   );
 };
 
-/** ---------------------------
- *  Certification Badge Card
- *  --------------------------- */
+
 const CertificationCard = () => {
   return (
     <div className="bg-white rounded-2xl shadow p-6 flex items-start gap-4">
@@ -128,11 +123,9 @@ const CertificationCard = () => {
   );
 };
 
-/** ---------------------------
- *  Page
- *  --------------------------- */
-const Infared = () => {
-  // 👉 Replace/add your own sample images (local /public or remote URLs)
+
+const Infrared = () => {
+ 
   const sampleImages = [
     {
       src: "https://www1.djicdn.com/cms/uploads/6758aba21b42c590757a9e08ec123d40.png",
@@ -328,4 +321,4 @@ const Infared = () => {
   );
 };
 
-export default Infared;
+export default Infrared;

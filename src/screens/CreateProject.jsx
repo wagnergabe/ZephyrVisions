@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 function CreateProject() {
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function CreateProject() {
             try {
                 const token = sessionStorage.getItem("authToken");
 
-                const response = await fetch("http://localhost:5000/api/clients", {
+                const response = await fetch(`${API_BASE_URL}/api/clients`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
@@ -50,7 +51,7 @@ function CreateProject() {
         try {
             const token = sessionStorage.getItem("authToken");
 
-            const response = await fetch("http://localhost:5000/api/projects", {
+            const response = await fetch(`${API_BASE_URL}/api/projects`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 
 function ClientDashboard() {
@@ -14,7 +15,7 @@ function ClientDashboard() {
         const token = sessionStorage.getItem("authToken");
 
         const response = await fetch(
-          "http://localhost:5000/api/clients/dashboard",
+          `${API_BASE_URL}/api/clients/dashboard`,
           {
             headers: {
               Authorization: `Bearer ${token}`,

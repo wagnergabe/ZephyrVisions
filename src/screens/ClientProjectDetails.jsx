@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 function ClientProjectDetails() {
     const { projectId } = useParams();
@@ -15,7 +16,7 @@ function ClientProjectDetails() {
                 const token = sessionStorage.getItem("authToken");
 
                 const response = await fetch(
-                    `http://localhost:5000/api/clients/projects/${projectId}`,
+                    `${API_BASE_URL}/api/clients/projects/${projectId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -32,7 +33,7 @@ function ClientProjectDetails() {
                 setProject(data.project);
 
                 const deliverablesResponse = await fetch(
-                    `http://localhost:5000/api/clients/projects/${projectId}/deliverables`,
+                    `${API_BASE_URL}/api/clients/projects/${projectId}/deliverables`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -64,7 +65,7 @@ function ClientProjectDetails() {
             const token = sessionStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:5000/api/clients/deliverables/${deliverable.id}/download`,
+                `${API_BASE_URL}/api/clients/deliverables/${deliverable.id}/download`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,
