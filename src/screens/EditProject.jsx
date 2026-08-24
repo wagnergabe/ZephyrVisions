@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 function EditProject() {
     const { projectId } = useParams();
@@ -22,7 +23,7 @@ function EditProject() {
                 const token = sessionStorage.getItem("authToken");
 
                 const response = await fetch(
-                    `http://localhost:5000/api/projects/${projectId}`,
+                    `${API_BASE_URL}/api/projects/${projectId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -72,7 +73,7 @@ const handleSubmit = async (event) => {
     const token = sessionStorage.getItem("authToken");
 
     const response = await fetch(
-      `http://localhost:5000/api/projects/${projectId}`,
+      `${API_BASE_URL}/api/projects/${projectId}`,
       {
         method: "PUT",
         headers: {

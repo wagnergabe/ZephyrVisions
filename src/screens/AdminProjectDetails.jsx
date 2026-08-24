@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 function AdminProjectDetails() {
     const { projectId } = useParams();
@@ -22,7 +23,7 @@ function AdminProjectDetails() {
                 const token = sessionStorage.getItem("authToken");
 
                 const response = await fetch(
-                    `http://localhost:5000/api/projects/${projectId}`,
+                    `${API_BASE_URL}/api/projects/${projectId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -41,7 +42,7 @@ function AdminProjectDetails() {
 
 
                 const deliverablesResponse = await fetch(
-                    `http://localhost:5000/api/projects/${projectId}/deliverables`,
+                    `${API_BASE_URL}/api/projects/${projectId}/deliverables`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -80,7 +81,7 @@ function AdminProjectDetails() {
             formData.append("file", selectedFile);
 
             const response = await fetch(
-                `http://localhost:5000/api/projects/${projectId}/deliverables`,
+                `${API_BASE_URL}/api/projects/${projectId}/deliverables`,
                 {
                     method: "POST",
                     headers: {
@@ -114,7 +115,7 @@ function AdminProjectDetails() {
             const token = sessionStorage.getItem("authToken");
 
             const response = await fetch(
-                `http://localhost:5000/api/projects/deliverables/${deliverable.id}/download`,
+                `${API_BASE_URL}/api/projects/deliverables/${deliverable.id}/download`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { API_BASE_URL } from "../services/api";
 
 function AddClient() {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ function AddClient() {
     try {
       const token = sessionStorage.getItem("authToken");
 
-      const response = await fetch("http://localhost:5000/api/clients", {
+      const response = await fetch(`${API_BASE_URL}/api/clients`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
